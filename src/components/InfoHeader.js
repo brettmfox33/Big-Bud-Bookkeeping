@@ -49,66 +49,46 @@ export default function InfoHeader () {
     const classes = useStyles();
 
     return (
-            <Grid
-                id="contactContainer"
-                className={classes.infoHeader}
-                container
-                direction="row"
-                justify="flex-end"
-                alignItems="center"
-                xs={12}
-            >
-                <div id="contactInfo" className={classes.contactInfo}>
-                    <div id="emailInfo">
-                        <FontAwesomeIcon icon={faEnvelope}/>
-                        <span className={classes.emailText}>sales@bigbudbookkeeping.com</span>
-                    </div>
-                    <div id="phoneInfo" className={classes.phoneInfo}>
-                        <FontAwesomeIcon icon={faPhoneAlt}/>
-                        <span className={classes.phoneText}>918-978-4853</span>
-                    </div>
+        <Grid
+            id="contactContainer"
+            className={classes.infoHeader}
+            container
+            direction="row"
+            justify="flex-end"
+            alignItems="center"
+            xs={12}
+        >
+            <div id="contactInfo" className={classes.contactInfo}>
+                <div id="emailInfo">
+                    <FontAwesomeIcon icon={faEnvelope}/>
+                    <span className={classes.emailText}>sales@bigbudbookkeeping.com</span>
                 </div>
-                <div id="socialMediaIcons" className={classes.socialMediaIcons}>
-                    <IconButton 
-                        disableFocusRipple={true} 
-                        disableRipple={true} 
-                        size="small"
-                        href="https://www.facebook.com/BigBudBookkeeping/"
-                        target="_blank"
-                    >
-                        <FontAwesomeIcon icon={faFacebook}  className={classes.facebookLogo}/>
-                    </IconButton>
-                    <IconButton 
-                        disableFocusRipple={true} 
-                        disableRipple={true} 
-                        size="small" 
-                        className={classes.linkedInLogo}
-                        href="https://www.linkedin.com/in/raelyn-yoder-820068196/"
-                        target="_blanke"
-                    >
-                        <FontAwesomeIcon icon={faLinkedin}/>
-                    </IconButton>
+                <div id="phoneInfo" className={classes.phoneInfo}>
+                    <FontAwesomeIcon icon={faPhoneAlt}/>
+                    <span className={classes.phoneText}>918-978-4853</span>
                 </div>
-            </Grid>
-            
-            /* <Toolbar>
-                <div className={classes.mainLogo}>
-                    bbb
-                </div>
-                <div className={classes.contactInfo}>
-                    <div>
-                        <FontAwesomeIcon icon={faEnvelope}/>
-                        sales@bigbudbookkeeping.com
-                    </div>
-                    <div>
-                        <FontAwesomeIcon icon={faPhoneAlt}/>
-                        918-978-4853
-                    </div>
-                    <div>
-                        <FontAwesomeIcon icon={faFacebook}/>
-                        <FonteAwesomeIcon icon={faLinkedin}/>
-                    </div>
-                </div>
-            </Toolbar> */
+            </div>
+            <div id="socialMediaIcons" className={classes.socialMediaIcons}>
+                <IconButton 
+                    disableFocusRipple={true} 
+                    disableRipple={true} 
+                    size="small"
+                    href="https://www.facebook.com/BigBudBookkeeping/"
+                    target="_blank"
+                >
+                    <FontAwesomeIcon icon={faFacebook}  className={classes.facebookLogo}/>
+                </IconButton>
+                <IconButton 
+                    disableFocusRipple={true} 
+                    disableRipple={true} 
+                    size="small" 
+                    className={classes.linkedInLogo}
+                    href="https://www.linkedin.com/in/raelyn-yoder-820068196/"
+                    target="_blanke"
+                >
+                    <FontAwesomeIcon icon={faLinkedin}/>
+                </IconButton>
+            </div>
+        </Grid>
     )
 }
