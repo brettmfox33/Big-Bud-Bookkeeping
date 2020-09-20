@@ -56,7 +56,6 @@ export default function InfoHeader () {
             direction="row"
             justify="flex-end"
             alignItems="center"
-            xs={12}
         >
             <div id="contactInfo" className={classes.contactInfo}>
                 <div id="emailInfo">

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import { Grid, Button, withStyles } from '@material-ui/core'
+import { Button, withStyles } from '@material-ui/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
@@ -8,7 +8,7 @@ import fonts from "../styles/fonts";
 const AppointmentButton = withStyles((theme) => ({
     root: {
         borderRadius: 50,
-        height: 60,
+        height: 50,
         width: 215,
         padding: 0,
         fontFamily: fonts.textFont,
@@ -31,7 +31,7 @@ const AppointmentButton = withStyles((theme) => ({
 
   const LogoButton = withStyles((theme) => ({
     root: {
-        width: 250
+        width: 200
     }
   }))(HeaderButton);
 
@@ -39,13 +39,13 @@ const AppointmentButton = withStyles((theme) => ({
 const useStyles = makeStyles((theme) => ({
     headerLinksContainer: {
         width: "100%",
-        height: 95,
+        height: 70,
         borderBottom: `2px solid ${colors.mainPurple}`,
     },
     headerLinks: {
         float: "right",
         marginRight: 145,
-        height: 95,
+        height: 70,
         display: "flex",
         alignItems: "center"
     },
