@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { Grid, IconButton} from '@material-ui/core';
-import colors from "../styles/colors";
-import fonts from "../styles/fonts";
+import colors from "../../styles/colors";
+import fonts from "../../styles/fonts";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faFacebook} from '@fortawesome/free-brands-svg-icons'
