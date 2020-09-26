@@ -69,6 +69,7 @@ const useStyles = makeStyles({
 
 export default function ClearHeader() {
     const classes = useStyles();
+    
     return (
         <div className={classes.headerBottomMain}>
             <div className={classes.mainLogo}>
