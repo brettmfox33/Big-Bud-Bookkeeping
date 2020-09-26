@@ -39,7 +39,7 @@ export default function ServiceBanner() {
     const classes = useStyles();
 
     return (
-        <Grid container xs={12} direction="column" justify="center" alignItems="center" className={classes.bannerContainer}>
+        <Grid container direction="column" justify="center" alignItems="center" className={classes.bannerContainer}>
             <Grid item sm={4} className={classes.text}>
                 Bring your business back into focus with our step by step process.
             </Grid>

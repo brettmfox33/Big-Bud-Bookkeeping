@@ -16,12 +16,11 @@ const useStyles = makeStyles({
         color: colors.mainPurple,
         fontFamily: fonts.titleFont,
         fontSize: 18,
-        fontWeight: 700,
-        marginBottom: 7
+        fontWeight: 700
     },
     titleText: {
         fontFamily: fonts.titleFont,
-        fontSize: 38,
+        fontSize: 40,
         fontWeight: 700,
         marginBottom: 38
     },
@@ -41,7 +40,7 @@ export default function Services() {
             direction="row"
             className={classes.servicesContainer}
         >
-            <Grid xs={0} sm={1}></Grid>
+            <Grid item sm={1}></Grid>
             <Grid sm={10} item container direction="column" >
                 <Grid className={classes.title}>Services</Grid>
                 <Grid className={classes.titleText}>What we can help with.</Grid>
@@ -66,7 +65,7 @@ export default function Services() {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid xs={0} sm={1}></Grid>
+            <Grid item sm={1}></Grid>
         </Grid>
     )
 }

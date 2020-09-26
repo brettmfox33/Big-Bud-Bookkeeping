@@ -37,7 +37,7 @@ export default function Banner() {
             direction="row"
             className={classes.bannerMain}
         >
-            <Grid xs={0} sm={1}></Grid>
+            <Grid item sm={1}></Grid>
             <Grid
                 container
                 item

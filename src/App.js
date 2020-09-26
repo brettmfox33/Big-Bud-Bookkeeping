@@ -9,6 +9,7 @@ import Services from './components/services/Services';
 import ServiceBanner from './components/services/ServiceBanner';
 import { Grid } from '@material-ui/core';
 import Footer from './components/Footer';
+import Contact from './components/Contact';
 
 function App() {
     const matches = useMediaQuery('(min-width:1000px)');
@@ -30,6 +31,7 @@ function App() {
                 <Grid><Banner /></Grid>
                 <Grid><Services /></Grid>
                 <Grid><ServiceBanner /></Grid>
+                <Grid><Contact /></Grid>
                 <Grid><Footer /></Grid>
             </Grid>
          </div>
