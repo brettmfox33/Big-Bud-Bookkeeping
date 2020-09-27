@@ -25,7 +25,7 @@ const useStyles = makeStyles({
         marginBottom: 38
     },
     service: {
-        borderBottom: `1px solid ${colors.mainPurple}`,
+        borderBottom: `3px solid ${colors.mainPurple}`,
         paddingBottom: 23,
         marginBottom: 100
     }
@@ -38,10 +38,11 @@ export default function Services() {
         <Grid 
             container
             direction="row"
+            justify="space-evenly"
             className={classes.servicesContainer}
         >
             <Grid item sm={1}></Grid>
-            <Grid sm={10} item container direction="column" >
+            <Grid sm={8} item container direction="column" >
                 <Grid className={classes.title}>Services</Grid>
                 <Grid className={classes.titleText}>What we can help with.</Grid>
                 <Grid container direction="row" justify="space-between">
@@ -65,7 +66,7 @@ export default function Services() {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid item sm={1}></Grid>
+            <Grid it sm={1}></Grid>
         </Grid>
     )
 }

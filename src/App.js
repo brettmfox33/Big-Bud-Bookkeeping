@@ -8,8 +8,8 @@ import Banner from './components/Banner';
 import Services from './components/services/Services';
 import ServiceBanner from './components/services/ServiceBanner';
 import { Grid } from '@material-ui/core';
-import Footer from './components/Footer';
-import Contact from './components/Contact';
+import Footer from './components/footer/Footer';
+import Contact from './components/contact/Contact';
 
 function App() {
     const matches = useMediaQuery('(min-width:1000px)');
@@ -28,11 +28,11 @@ function App() {
                 </div>
             }
             <Grid container direction="column">
-                <Grid><Banner /></Grid>
-                <Grid><Services /></Grid>
-                <Grid><ServiceBanner /></Grid>
-                <Grid><Contact /></Grid>
-                <Grid><Footer /></Grid>
+                <Banner />
+                <Services />
+                <ServiceBanner />
+                <Contact />
+                <Footer />
             </Grid>
          </div>
      );

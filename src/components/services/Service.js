@@ -16,7 +16,8 @@ const useStyles = makeStyles({
     text: {
         fontStyle: fonts.textFont,
         fontWeight: 400,
-        fontSize: 18
+        fontSize: 18,
+        lineHeight: 1.8
     }
 });
 

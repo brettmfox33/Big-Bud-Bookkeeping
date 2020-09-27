@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import { Grid } from '@material-ui/core'
+import { Grid, useMediaQuery } from '@material-ui/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import image from '../images/unknown.png'
 import colors from "../styles/colors";
@@ -10,9 +10,11 @@ const useStyles = makeStyles({
     bannerMain: {
         backgroundImage: `linear-gradient(0deg, rgba(20, 20, 20, 0.78), rgba(20, 20, 20, 0.78)), url(${image})`,
         height: 500,
-        marginTop: -72,
         backgroundSize: "cover",
         padding: 50
+    },
+    fullBannerMain: {
+        marginTop: -72,
     },
     bannerTitle: {
         color: colors.softGreen,
@@ -30,14 +32,15 @@ const useStyles = makeStyles({
 
 export default function Banner() {
     const classes = useStyles();
+    const matches = useMediaQuery('(min-width:1000px)');
 
     return(
         <Grid
             container
             direction="row"
-            className={classes.bannerMain}
+            className={[classes.bannerMain, matches ? classes.fullBannerMain : null]}
         >
-            <Grid item sm={1}></Grid>
+            <Grid item sm={2}></Grid>
             <Grid
                 container
                 item

@@ -1,13 +1,15 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { Grid, IconButton, Divider } from '@material-ui/core';
+import { Grid, IconButton, useMediaQuery } from '@material-ui/core';
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import colors from "../styles/colors";
-import fonts from "../styles/fonts";
+import colors from "../../styles/colors";
+import fonts from "../../styles/fonts";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCopyright} from '@fortawesome/free-solid-svg-icons'
 import {faFacebook} from '@fortawesome/free-brands-svg-icons'
 import {faLinkedin} from '@fortawesome/free-brands-svg-icons'
+import WebFooterInfo from './WebFooterInfo';
+import MobileFooterInfo from './MobileFooterInfo';
 
 const useStyles = makeStyles({
     footerContainer: {
@@ -29,64 +31,27 @@ const useStyles = makeStyles({
         marginLeft: 5
     },
     linkedInLogo: {
-        fontSize: 30,
         marginLeft: 10,
-        color: "white"
+        color: "white",
+        fontSize: 32,
+        marginTop: 2
     },
     facebookLogo: {
-        fontSize: 30,
-        color: "white"
-    },
-    divider: {
-        height: 115,
-        backgroundColor: 'white',
-    },
-    leftQuestion: {
-        fontSize: 25,
-        fontFamily: fonts.titleFont,
-    },
-    leftText: {
-        fontSize: 16,
-        fontFamily: fonts.textFont
-    },
-    rightQuestion: {
-        fontSize: 25,
-        fontFamily: fonts.titleFont,
-    },
-    rightText: {
-        fontSize: 16,
-        fontFamily: fonts.textFont
-    },
-    leftInfo: {
-        marginBottom: 60
-    },
-    rightInfo: {
-        marginBottom: 60
+        color: "white",
+        fontSize: 30
     }
   });
 
+
 export default function Footer() {
     const classes = useStyles();
+    const matches = useMediaQuery('(min-width:1000px)');
 
     return (
         <Grid container direction="column" justify="space-between" className={classes.footerContainer}>
-            <Grid container item direction="row" justify="space-around">
-                <Grid container item direction="row" alignItems="center" justify="space-evenly" xs={10} sm={3} wrap="nowrap" className={classes.leftInfo}>
-                    <Grid item xs={3} className={classes.leftQuestion}>Who do we help?</Grid>
-                    <Divider orientation="vertical" className={classes.divider}></Divider>
-                    <Grid item xs={8} className={classes.leftText}>
-                        Our primary focus is on Oklahoma dispensaries but we are happy to help our friends from anywhere
-                    </Grid>
-                </Grid>
-                <Grid container item direction="row" alignItems="center" justify="space-evenly" xs={10} sm={3} wrap="nowrap"  className={classes.rightInfo}>
-                    <Grid item xs={3} className={classes.rightQuestion}>Ready to get started?</Grid>
-                    <Divider orientation="vertical" className={classes.divider}></Divider>
-                    <Grid item xs={8} container direction="column" alignItems="center" className={classes.rightText}>
-                        <Grid>918-978-4853</Grid>
-                        <Grid>sales@bigbudbookkeeping.com</Grid>
-                    </Grid>
-                </Grid>
-            </Grid>
+            {
+                matches ? <WebFooterInfo /> : <MobileFooterInfo />
+            }
             <Grid container item direction="column" alignItems="center" className={classes.bottomInfo}>
                 <Grid>
                     <IconButton
@@ -95,7 +60,6 @@ export default function Footer() {
                         size="small"
                         href="https://www.facebook.com/BigBudBookkeeping/"
                         target="_blank"
-                        className={classes.facebookLogo}
                     >
                         <FontAwesomeIcon icon={faFacebook}  className={classes.facebookLogo}/>
                     </IconButton>
@@ -105,9 +69,8 @@ export default function Footer() {
                         size="small"
                         href="https://www.linkedin.com/in/raelyn-yoder-820068196/"
                         target="_blank"
-                        className={classes.linkedInLogo}
                     >
-                        <FontAwesomeIcon icon={faLinkedin}  className={classes.facebookLogo}/>
+                        <FontAwesomeIcon icon={faLinkedin}  className={classes.linkedInLogo}/>
                     </IconButton>
                 </Grid>
                 <Grid>

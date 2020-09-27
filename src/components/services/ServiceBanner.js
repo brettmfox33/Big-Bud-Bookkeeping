@@ -24,7 +24,8 @@ const BannerButton = withStyles ({
 const useStyles = makeStyles({
     bannerContainer: {
         height: 240,
-        backgroundColor: colors.softPurple
+        backgroundColor: colors.softPurple,
+        padding: 10
     },
     text: {
         fontFamily: fonts.titleFont,
