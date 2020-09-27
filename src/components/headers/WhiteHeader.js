@@ -7,7 +7,10 @@ import fonts from "../../styles/fonts";
 
 const HeaderButton = withStyles ({
     root: {
-        fontFamily: fonts.textFont
+        fontFamily: fonts.textFont,
+        '&:hover': {
+            backgroundColor: "white"
+        }
     }
 })(Button);
 
@@ -18,17 +21,22 @@ const AppointmentButton = withStyles({
         width: 215,
         padding: 0,
         fontSize: 15,
-        borderColor: "white",
+        borderColor: colors.mainPurple,
+        color: colors.mainPurple,
         '&:hover': {
             backgroundColor: colors.mainPurple,
-            borderColor: colors.mainPurple
-          }
+            borderColor: colors.mainPurple,
+            color: "white"
+        }
     }
 })(HeaderButton);
 
 const LogoButton = withStyles({
     root: {
-        width: 200
+        width: 200,
+        '&:hover': {
+            backgroundColor: "white"
+        }
     }
 })(Button);
 
@@ -36,12 +44,14 @@ const useStyles = makeStyles({
     headerBottomMain: {
         width: "100%",
         height: 70,
-        backgroundColor: 'transparent',
+        backgroundColor: 'white',
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
         position: 'sticky',
-        top: 42
+        top: 42,
+        borderBottom: `1px solid ${colors.mainPurple}`,
+        zIndex: 9999
     },
     headerLinks: {
         marginRight: 200,
@@ -53,14 +63,10 @@ const useStyles = makeStyles({
     },
     scheduleAppointment: {
         marginLeft: 25,
-        color: "white"
+        color: colors
     },
     servicesButton: {
-        marginLeft: 25,
-        color: "white"
-    },
-    aboutButton: {
-        color: "white"
+        marginLeft: 25
     },
     AppointmentButtonContainer: {
         display: "flex",
@@ -75,11 +81,11 @@ export default function ClearHeader() {
         <div className={classes.headerBottomMain}>
             <div className={classes.mainLogo}>
                 <LogoButton disableFocusRipple={true} disableRipple={true}>
-                    <img alt="Colored Logo" src={require('../../images/BigBudBookkeeping_Logo_White.png')}></img>
+                    <img alt="Colored Logo" src={require('../../images/BigBudBookkeeping_Logo.png')}></img>
                 </LogoButton>
             </div>
             <div className={classes.headerLinks}>
-                <HeaderButton disableFocusRipple={true} disableRipple={true} className={classes.aboutButton}> About Us </HeaderButton>
+                <HeaderButton disableFocusRipple={true} disableRipple={true}> About Us </HeaderButton>
                 <HeaderButton disableFocusRipple={true} disableRipple={true} className={classes.servicesButton}> Services </HeaderButton>
                 <div className={classes.AppointmentButtonContainer}>
                     <AppointmentButton variant="outlined" className={classes.scheduleAppointment}> Schedule Appointment </AppointmentButton>

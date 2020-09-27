@@ -20,8 +20,11 @@ const useStyles = makeStyles({
         borderBottom: `1px ${colors.mainPurple} solid`,
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-between"
-    },
+        justifyContent: "space-between",
+        position: 'fixed',
+        top: 0,
+        backgroundColor: 'white',
+        },
     mobileLogo: {
         display: "flex",
         alignItems: "center",

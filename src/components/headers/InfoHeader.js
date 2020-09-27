@@ -15,7 +15,10 @@ const useStyles = makeStyles({
       height: 42,
       background: colors.mainPurple,
       color: "white",
-      paddingRight: 145
+      paddingRight: 200,
+      position: 'sticky',
+      top: 0,
+      zIndex: 9999
     },
     contactInfo: {
         display: "flex"

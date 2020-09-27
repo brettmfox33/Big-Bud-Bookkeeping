@@ -6,7 +6,7 @@ import {InlineWidget} from 'react-calendly'
 export default function ContactCalendly() {
 
  return (
-    <Grid alignItems="center" item xs={12} sm={5}>                    
+    <Grid item xs={12} sm={5}>                    
     <InlineWidget 
         styles={{
             height: '1000px'

@@ -1,20 +1,44 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import { Grid, useMediaQuery } from '@material-ui/core'
+import { Grid, useMediaQuery, Button, withStyles } from '@material-ui/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import image from '../images/unknown.png'
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
 
+const AppointmentButton = withStyles({
+    root: {
+        fontFamily: fonts.textFont,
+        borderRadius: 50,
+        height: 50,
+        width: 215,
+        padding: 0,
+        fontSize: 15,
+        borderColor: 'white',
+        color: 'white',
+        '&:hover': {
+            backgroundColor: colors.mainPurple,
+            borderColor: colors.mainPurple,
+            color: "white"
+        }
+    }
+})(Button);
+
+
 const useStyles = makeStyles({
-    bannerMain: {
+    fullBannerMain: {
         backgroundImage: `linear-gradient(0deg, rgba(20, 20, 20, 0.78), rgba(20, 20, 20, 0.78)), url(${image})`,
         height: 500,
         backgroundSize: "cover",
-        padding: 50
+        padding: 50,
+        marginTop: -75,
     },
-    fullBannerMain: {
-        marginTop: -72,
+    mobileBannerMain: {
+        backgroundImage: `linear-gradient(0deg, rgba(20, 20, 20, 0.78), rgba(20, 20, 20, 0.78)), url(${image})`,
+        height: 500,
+        backgroundSize: "cover",
+        padding: 50,
+        marginTop: 70
     },
     bannerTitle: {
         color: colors.softGreen,
@@ -26,7 +50,8 @@ const useStyles = makeStyles({
         color: "white",
         fontFamily: fonts.textFont,
         fontSize: 18,
-        lineHeight: 2
+        lineHeight: 2,
+        marginBottom: 40
     }
 });
 
@@ -38,7 +63,7 @@ export default function Banner() {
         <Grid
             container
             direction="row"
-            className={[classes.bannerMain, matches ? classes.fullBannerMain : null]}
+            className={matches ? classes.fullBannerMain : classes.mobileBannerMain}
         >
             <Grid item sm={2}></Grid>
             <Grid
@@ -57,6 +82,13 @@ export default function Banner() {
                     processes and controls around cash, inventory and compliance 
                     to ensure business is hitting profit benchmarks.
                 </Grid>
+                {
+                    matches ? 
+                        <Grid>
+                            <AppointmentButton variant="outlined"> Schedule Appointment </AppointmentButton>
+                        </Grid>
+                    : null
+                }
             </Grid>
         </Grid>
     )

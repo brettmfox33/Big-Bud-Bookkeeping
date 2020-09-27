@@ -66,7 +66,7 @@ export default function Services() {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid it sm={1}></Grid>
+            <Grid item sm={1}></Grid>
         </Grid>
     )
 }

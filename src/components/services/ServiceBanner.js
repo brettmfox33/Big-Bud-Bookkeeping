@@ -44,7 +44,7 @@ export default function ServiceBanner() {
             <Grid item sm={4} className={classes.text}>
                 Bring your business back into focus with our step by step process.
             </Grid>
-            <Grid item>
+            <Grid>
                 <BannerButton>Process Overview</BannerButton>
             </Grid>
         </Grid>
