@@ -3,7 +3,6 @@ import { jsx } from '@emotion/core';
 import { Fragment } from "react"
 import WhiteHeader from "./headers/WhiteHeader"
 import InfoHeader from './headers/InfoHeader';
-// import image from '../images/Under-Construction.png'
 import { Grid, useMediaQuery } from '@material-ui/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import MobileHeader from './headers/MobileHeader';
@@ -134,10 +133,6 @@ export default function About() {
                     <Grid item xs sm={2}></Grid>
                 </Grid>
             </Grid>
-            {/* <Grid container direction="row" justify="center">
-                <img alt="Under Construction" src={image}/>
-            </Grid> */}
-
         </Fragment>
     );
 }

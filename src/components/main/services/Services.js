@@ -2,9 +2,9 @@
 import { jsx } from '@emotion/core';
 import { Grid } from '@material-ui/core';
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import colors from "../../styles/colors";
-import fonts from "../../styles/fonts";
 import Service from './Service';
+import colors from '../../../styles/colors';
+import fonts from '../../../styles/fonts';
 
 const useStyles = makeStyles({
     servicesContainer: {

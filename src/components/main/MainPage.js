@@ -1,15 +1,14 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { Grid } from "@material-ui/core";
-import Banner from '../Banner';
-import Services from '../services/Services';
-import ServiceBanner from '../services/ServiceBanner';
-import Contact from '../contact_components/Contact';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import InfoHeader from '../headers/InfoHeader';
-import MobileHeader from '../headers/MobileHeader';
+import { useMediaQuery, Grid } from '@material-ui/core';
 import { Fragment } from 'react';
+import InfoHeader from '../headers/InfoHeader';
 import HeaderMain from '../headers/HeaderMain';
+import MobileHeader from '../headers/MobileHeader';
+import Services from './services/Services';
+import Banner from '../Banner'
+import ServiceBanner from './services/ServiceBanner'
+import Contact from '../contact_components/Contact'
 
 export default function MainPage() {
     const largeScreen = useMediaQuery('(min-width:1000px)');
