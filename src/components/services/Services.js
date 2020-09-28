@@ -42,7 +42,7 @@ export default function Services() {
             className={classes.servicesContainer}
         >
             <Grid item sm={1}></Grid>
-            <Grid sm={8} item container direction="column" >
+            <Grid sm={8} item container direction="column">
                 <Grid className={classes.title}>Services</Grid>
                 <Grid className={classes.titleText}>What we can help with.</Grid>
                 <Grid container direction="row" justify="space-between">

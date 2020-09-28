@@ -5,6 +5,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import image from '../images/unknown.png'
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
+import { Link } from "react-router-dom";
 
 const AppointmentButton = withStyles({
     root: {
@@ -52,6 +53,9 @@ const useStyles = makeStyles({
         fontSize: 18,
         lineHeight: 2,
         marginBottom: 40
+    },
+    link: {
+        textDecoration: 'none'
     }
 });
 
@@ -84,9 +88,9 @@ export default function Banner() {
                 </Grid>
                 {
                     matches ? 
-                        <Grid>
+                        <Link to="/appointment" className={classes.link}>
                             <AppointmentButton variant="outlined"> Schedule Appointment </AppointmentButton>
-                        </Grid>
+                        </Link>
                     : null
                 }
             </Grid>

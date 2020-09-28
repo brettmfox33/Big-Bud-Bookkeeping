@@ -1,40 +1,34 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import './App.css';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import InfoHeader from './components/headers/InfoHeader';
-import MobileHeader from './components/headers/MobileHeader';
-import Banner from './components/Banner';
-import Services from './components/services/Services';
-import ServiceBanner from './components/services/ServiceBanner';
 import { Grid } from '@material-ui/core';
 import Footer from './components/footer/Footer';
-import Contact from './components/contact/Contact';
-import HeaderMain from './components/headers/HeaderMain';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import About from './components/About';
+import MainPage from './components/main/MainPage';
+import Appointment from './components/Appointment';
 
 function App() {
-    const matches = useMediaQuery('(min-width:1000px)');
 
     return (
-        <div>
-            {
-                matches 
-                ? 
-                <Fragment>
-                    <InfoHeader />
-                    <HeaderMain /> 
-                </Fragment>
-                : <div>
-                    <MobileHeader />
-                </div>
-            }
+        <Router>
             <Grid container direction="column">
-                <Banner />
-                <Services />
-                <ServiceBanner />
-                <Contact />
+                <Switch>
+                    <Route exact path="/">
+                        <MainPage />
+                    </Route>
+                    <Route exact path="/about">
+                        <About />
+                    </Route>
+                    <Route exact path="/services">
+                        <About />
+                    </Route>
+                    <Route exact path="/appointment">
+                        <Appointment />
+                    </Route>
+                </Switch>
                 <Footer />
             </Grid>
-         </div>
+        </Router>
      );
 }
 

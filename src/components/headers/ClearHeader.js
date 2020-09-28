@@ -4,6 +4,7 @@ import { Button, withStyles } from '@material-ui/core';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
+import { Link } from "react-router-dom";
 
 const HeaderButton = withStyles ({
     root: {
@@ -25,12 +26,6 @@ const AppointmentButton = withStyles({
           }
     }
 })(HeaderButton);
-
-const LogoButton = withStyles({
-    root: {
-        width: 200
-    }
-})(Button);
 
 const useStyles = makeStyles({
     headerBottomMain: {
@@ -62,9 +57,17 @@ const useStyles = makeStyles({
     aboutButton: {
         color: "white"
     },
+    link: {
+        display: "flex",
+        textDecoration: "none",
+        alignItems: "center"
+    },
     AppointmentButtonContainer: {
         display: "flex",
         alignItems: "center"
+    },
+    image: {
+        width: 200
     }
   });
 
@@ -73,17 +76,21 @@ export default function ClearHeader() {
 
     return (
         <div className={classes.headerBottomMain}>
-            <div className={classes.mainLogo}>
-                <LogoButton disableFocusRipple={true} disableRipple={true}>
-                    <img alt="Colored Logo" src={require('../../images/BigBudBookkeeping_Logo_White.png')}></img>
-                </LogoButton>
-            </div>
+            <Link to="/" className={classes.mainLogo}>
+                <Button disableFocusRipple={true} disableRipple={true}>
+                    <img alt="Colored Logo" src={require('../../images/BigBudBookkeeping_Logo_White.png')} className={classes.image}></img>
+                </Button>
+            </Link>
             <div className={classes.headerLinks}>
-                <HeaderButton disableFocusRipple={true} disableRipple={true} className={classes.aboutButton}> About Us </HeaderButton>
-                <HeaderButton disableFocusRipple={true} disableRipple={true} className={classes.servicesButton}> Services </HeaderButton>
-                <div className={classes.AppointmentButtonContainer}>
+                <Link to="/about" className={classes.link}>
+                    <HeaderButton disableFocusRipple={true} disableRipple={true} className={classes.aboutButton}> About Us </HeaderButton>
+                </Link>
+                <Link to="/services" className={classes.link}>
+                    <HeaderButton disableFocusRipple={true} disableRipple={true} className={classes.servicesButton}> Services </HeaderButton>
+                </Link>
+                <Link to="/appointment" className={classes.link}>
                     <AppointmentButton variant="outlined" className={classes.scheduleAppointment}> Schedule Appointment </AppointmentButton>
-                </div>
+                </Link>
             </div>
         </div>
     )

@@ -3,7 +3,7 @@ import { jsx } from '@emotion/core'
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import { Grid, Button, withStyles } from "@material-ui/core";
+import { Grid, Button, withStyles, useMediaQuery } from "@material-ui/core";
 
 const BannerButton = withStyles ({
     root: {
@@ -27,6 +27,11 @@ const useStyles = makeStyles({
         backgroundColor: colors.softPurple,
         padding: 10
     },
+    mobileBannerContainer: {
+        height: 300,
+        backgroundColor: colors.softPurple,
+        padding: 10
+    },
     text: {
         fontFamily: fonts.titleFont,
         color: 'white',
@@ -38,13 +43,14 @@ const useStyles = makeStyles({
 
 export default function ServiceBanner() {
     const classes = useStyles();
+    const largeScreen = useMediaQuery('(min-width:1000px)');
 
     return (
-        <Grid container direction="column" justify="center" alignItems="center" className={classes.bannerContainer}>
+        <Grid container direction="column" justify="center" alignItems="center" className={largeScreen ? classes.bannerContainer : classes.mobileBannerContainer}>
             <Grid item sm={4} className={classes.text}>
                 Bring your business back into focus with our step by step process.
             </Grid>
-            <Grid>
+            <Grid item>
                 <BannerButton>Process Overview</BannerButton>
             </Grid>
         </Grid>

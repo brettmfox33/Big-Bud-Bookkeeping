@@ -38,8 +38,9 @@ const useStyles = makeStyles({
         marginLeft: 30
     },
     linkedInLogo: {
-        fontSize: 25,
-        marginLeft: 15,
+        fontSize: 26,
+        marginTop: 2,
+        marginLeft: 10,
         color: "white"
     },
     facebookLogo: {
