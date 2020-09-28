@@ -4,7 +4,7 @@ import { Grid } from "@material-ui/core";
 import Banner from '../Banner';
 import Services from '../services/Services';
 import ServiceBanner from '../services/ServiceBanner';
-import Contact from '../contact/Contact';
+import Contact from '../contact_components/Contact';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import InfoHeader from '../headers/InfoHeader';
 import MobileHeader from '../headers/MobileHeader';
@@ -17,17 +17,17 @@ export default function MainPage() {
     return(
         <Grid container direction="column">
             {
-                    largeScreen 
-                    ?
-                        <Fragment>
-                            <InfoHeader />
-                            <HeaderMain />
-                        </Fragment>
-                    :
-                        <div>
-                            <MobileHeader />
-                        </div>
-                }
+                largeScreen 
+                ?
+                    <Fragment>
+                        <InfoHeader />
+                        <HeaderMain />
+                    </Fragment>
+                :
+                    <div>
+                        <MobileHeader />
+                    </div>
+            }
             <Banner />
             <Services />
             <ServiceBanner />

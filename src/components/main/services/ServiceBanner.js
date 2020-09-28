@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import colors from "../../styles/colors";
-import fonts from "../../styles/fonts";
+import colors from "../../../styles/colors";
+import fonts from "../../../styles/fonts";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import { Grid, Button, withStyles, useMediaQuery } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const BannerButton = withStyles ({
     root: {
@@ -51,7 +52,9 @@ export default function ServiceBanner() {
                 Bring your business back into focus with our step by step process.
             </Grid>
             <Grid item>
-                <BannerButton>Process Overview</BannerButton>
+                <Link to="/services">
+                    <BannerButton>Process Overview</BannerButton>
+                </Link>
             </Grid>
         </Grid>
     )

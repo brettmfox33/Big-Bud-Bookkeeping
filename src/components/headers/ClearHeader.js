@@ -88,7 +88,7 @@ export default function ClearHeader() {
                 <Link to="/services" className={classes.link}>
                     <HeaderButton disableFocusRipple={true} disableRipple={true} className={classes.servicesButton}> Services </HeaderButton>
                 </Link>
-                <Link to="/appointment" className={classes.link}>
+                <Link to="/contact" className={classes.link}>
                     <AppointmentButton variant="outlined" className={classes.scheduleAppointment}> Schedule Appointment </AppointmentButton>
                 </Link>
             </div>

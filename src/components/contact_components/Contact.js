@@ -61,7 +61,7 @@ const useStyles = makeStyles({
 
 export default function Contact() {
     const classes = useStyles();
-    const matches = useMediaQuery('(min-width:1000px)');
+    const largeScreen = useMediaQuery('(min-width:1000px)');
 
     return(
         <Grid 
@@ -72,8 +72,8 @@ export default function Contact() {
             className={classes.contactContainer}
         >
             <Grid item sm={1}></Grid>
-            {matches ? <ContactCalendly /> : <ContactInfo />}
-            {matches ? <ContactInfo /> : <ContactCalendly />}
+                {largeScreen ? <ContactCalendly /> : <ContactInfo />}
+                {largeScreen ? <ContactInfo /> : <ContactCalendly />}
             <Grid item sm={1}></Grid>
         </Grid>
     )

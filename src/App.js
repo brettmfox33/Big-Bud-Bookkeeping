@@ -5,7 +5,7 @@ import Footer from './components/footer/Footer';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import About from './components/About';
 import MainPage from './components/main/MainPage';
-import Appointment from './components/Appointment';
+import Contact from './components/Contact';
 
 function App() {
 
@@ -22,8 +22,8 @@ function App() {
                     <Route exact path="/services">
                         <About />
                     </Route>
-                    <Route exact path="/appointment">
-                        <Appointment />
+                    <Route exact path="/contact">
+                        <Contact />
                     </Route>
                 </Switch>
                 <Footer />

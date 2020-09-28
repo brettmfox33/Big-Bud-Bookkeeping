@@ -18,7 +18,7 @@ const useStyles = makeStyles({
         position: 'fixed',
         top: 0,
         backgroundColor: 'white',
-        },
+    },
     mobileLogo: {
         display: "flex",
         alignItems: "center",

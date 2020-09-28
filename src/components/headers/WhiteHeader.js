@@ -4,7 +4,7 @@ import { Button, withStyles } from '@material-ui/core';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const HeaderButton = withStyles ({
     root: {
@@ -24,13 +24,14 @@ const AppointmentButton = withStyles({
         fontSize: 15,
         borderColor: colors.mainPurple,
         color: colors.mainPurple,
+        fontFamily: fonts.textFont,
         '&:hover': {
             backgroundColor: colors.mainPurple,
             borderColor: colors.mainPurple,
             color: "white"
         }
     }
-})(HeaderButton);
+})(Button);
 
 const LogoButton = withStyles({
     root: {
@@ -62,11 +63,12 @@ const useStyles = makeStyles({
         display: "flex"
     },
     scheduleAppointment: {
-        marginLeft: 25,
-        color: colors
-    },
-    servicesButton: {
         marginLeft: 25
+    },
+    selectedScheduleAppointment: {
+        marginLeft: 25,
+        backgroundColor: colors.mainPurple,
+        color: 'white'
     },
     appointmentButtonContainer: {
         display: "flex",
@@ -77,13 +79,24 @@ const useStyles = makeStyles({
         display: "flex",
         textDecoration: "none"
     },
+    servicesLink: {
+        display: "flex",
+        textDecoration: "none",
+        marginLeft: 25
+    },
     image: {
         width: 200
+    },
+    selectedLink: {
+        color: colors.mainPurple,
+        fontWeight: 'bolder',
+        fontSize: 15
     }
   });
 
 export default function ClearHeader() {
     const classes = useStyles();
+    const location = useLocation();
 
     return (
         <div className={classes.headerBottomMain}>
@@ -94,13 +107,13 @@ export default function ClearHeader() {
             </Link>
             <div className={classes.headerLinks}>
                 <Link to="/about" className={classes.link}>
-                    <HeaderButton disableFocusRipple={true} disableRipple={true}> About Us </HeaderButton>
+                    <HeaderButton disableFocusRipple={true} disableRipple={true} className={location.pathname === '/about' ? classes.selectedLink : null}> About Us </HeaderButton>
                 </Link>
-                <Link to="/services" className={classes.link}>
-                    <HeaderButton disableFocusRipple={true} disableRipple={true} className={classes.servicesButton}> Services </HeaderButton>
+                <Link to="/services" className={classes.servicesLink}>
+                    <HeaderButton disableFocusRipple={true} disableRipple={true}  className={location.pathname === '/services' ? classes.selectedLink : null}> Services </HeaderButton>
                 </Link>
-                <Link to="/appointment" className={classes.appointmentButtonContainer}>
-                    <AppointmentButton variant="outlined" className={classes.scheduleAppointment}> Schedule Appointment </AppointmentButton>
+                <Link to="/contact" className={classes.appointmentButtonContainer}>
+                    <AppointmentButton variant="outlined" className={location.pathname === '/contact' ? classes.selectedScheduleAppointment : classes.scheduleAppointment}> Schedule Appointment </AppointmentButton>
                 </Link>
             </div>
         </div>

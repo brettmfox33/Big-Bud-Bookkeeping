@@ -61,13 +61,13 @@ const useStyles = makeStyles({
 
 export default function Banner() {
     const classes = useStyles();
-    const matches = useMediaQuery('(min-width:1000px)');
+    const largeScreen = useMediaQuery('(min-width:1000px)');
 
     return(
         <Grid
             container
             direction="row"
-            className={matches ? classes.fullBannerMain : classes.mobileBannerMain}
+            className={largeScreen ? classes.fullBannerMain : classes.mobileBannerMain}
         >
             <Grid item sm={2}></Grid>
             <Grid
@@ -87,8 +87,8 @@ export default function Banner() {
                     to ensure business is hitting profit benchmarks.
                 </Grid>
                 {
-                    matches ? 
-                        <Link to="/appointment" className={classes.link}>
+                    largeScreen ? 
+                        <Link to="/contact" className={classes.link}>
                             <AppointmentButton variant="outlined"> Schedule Appointment </AppointmentButton>
                         </Link>
                     : null
