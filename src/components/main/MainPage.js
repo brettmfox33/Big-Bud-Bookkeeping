@@ -6,9 +6,9 @@ import InfoHeader from '../headers/InfoHeader';
 import HeaderMain from '../headers/HeaderMain';
 import MobileHeader from '../headers/MobileHeader';
 import Services from './services/Services';
-import Banner from '../Banner'
 import ServiceBanner from './services/ServiceBanner'
 import Contact from '../contact_components/Contact'
+import Banner from './Banner';
 
 export default function MainPage() {
     const largeScreen = useMediaQuery('(min-width:1000px)');

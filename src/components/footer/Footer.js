@@ -39,6 +39,11 @@ const useStyles = makeStyles({
     facebookLogo: {
         color: "white",
         fontSize: 30
+    },
+    devCreditAnchor: {
+        color: "#C6C6C6",
+        textDecoration: 'none',
+        fontWeight: 'bold'
     }
   });
 
@@ -78,7 +83,7 @@ export default function Footer() {
                     <span className={classes.copyrightText}>Big Bud Bookkeeping 2020</span>
                 </Grid>
                 <Grid className={classes.devCredit}>
-                    Site Built by Fox Digital
+                    Site Built by <a href="https://www.linkedin.com/in/brett-fox-00658a19b/" className={classes.devCreditAnchor}>Fox Digital</a>
                 </Grid>
             </Grid>
         </Grid>

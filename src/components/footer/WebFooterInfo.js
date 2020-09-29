@@ -46,11 +46,11 @@ export default function WebFooterInfo() {
             <Grid item className={classes.leftQuestion}>Who do we help?</Grid>
             <Divider orientation="vertical" className={classes.divider}></Divider>
             <Grid item className={classes.leftText}>
-                Our primary focus is on Oklahoma dispensaries but we are happy to help our friends from anywhere
+                Our primary focus is the Oklahoma cannabis industry but we assist clients in multiple industries all across the US.
             </Grid>
         </Grid>
         <Grid container item direction="row" alignItems="center" justify="space-evenly" xs={10} sm={4} wrap="nowrap"  className={classes.rightInfo}>
-            <Grid item className={classes.rightQuestion}>Ready to get organized?</Grid>
+            <Grid item className={classes.rightQuestion}>Ready to learn more?</Grid>
             <Divider orientation="vertical" className={classes.divider}></Divider>
             <Grid item container direction="column" alignItems="center" className={classes.rightText}>
                 <Grid>918-978-4853</Grid>

@@ -2,9 +2,9 @@
 import { jsx } from '@emotion/core'
 import { Grid, useMediaQuery, Button, withStyles } from '@material-ui/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import image from '../images/unknown.png'
-import colors from "../styles/colors";
-import fonts from "../styles/fonts";
+import image from '../../images/unknown.png'
+import colors from "../../styles/colors";
+import fonts from "../../styles/fonts";
 import { Link } from "react-router-dom";
 
 const AppointmentButton = withStyles({
@@ -84,7 +84,7 @@ export default function Banner() {
                 <Grid className={classes.bannerText}>
                     We help cannabis business owners implement robust daily operating 
                     processes and controls around cash, inventory and compliance 
-                    to ensure business is hitting profit benchmarks.
+                    to ensure business is hitting profit benchmarks. 
                 </Grid>
                 {
                     largeScreen ? 

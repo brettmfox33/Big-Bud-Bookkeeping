@@ -49,19 +49,21 @@ export default function Services() {
                     <Grid item xs={10} sm={3} className={classes.service}>
                         <Service 
                             title="Bookkeeping"
-                            text="Bring us your pile or receipts or shoe box filing system. Let us help you gain control of  your finances."
+                            text="We offer a range of bookkeeping services depending on client needs. 
+                            Read more about how we help businesses of all sizes take control of their finances."
                         />
                     </Grid>
                     <Grid item xs={10} sm={3} className={classes.service}>
                         <Service 
                             title="Advisory"
-                            text="Gain confidence in your numbers and take control of state and federal compliance."
+                            text="Our advisory services ensure your business is running smoothly in full compliance with all current regulations."
                         />
                     </Grid>
                     <Grid item xs={10} sm={3} className={classes.service}>
                         <Service 
                             title="Budgeting"
-                            text="Tighten up that ever expanding budget and be confident that you where all your money goes."
+                            text="Cash flow management is not just tracking money as it goes in and out.  
+                            Learn more about how we help businesses plan their financial futures."
                         />
                     </Grid>
                 </Grid>

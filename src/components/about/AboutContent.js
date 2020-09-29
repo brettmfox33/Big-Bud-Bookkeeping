@@ -1,13 +1,9 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { Fragment } from "react"
-import WhiteHeader from "./headers/WhiteHeader"
-import InfoHeader from './headers/InfoHeader';
-import { Grid, useMediaQuery } from '@material-ui/core'
+import { Grid, useMediaQuery } from '@material-ui/core';
+import colors from "../../styles/colors";
+import fonts from "../../styles/fonts";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import MobileHeader from './headers/MobileHeader';
-import colors from "../styles/colors";
-import fonts from "../styles/fonts";
 
 const useStyles = makeStyles({
     motivationContainer: {
@@ -71,29 +67,15 @@ const useStyles = makeStyles({
     },
     whyBottomText: {
         fontWeight: 700
-    },
-    
+    }
 });
 
-export default function About() {
+export default function AboutContent() {
     const classes = useStyles();
     const largeScreen = useMediaQuery('(min-width:1000px)');
 
-    return(
-        <Fragment>
-            {
-                largeScreen 
-                ?
-                    <Fragment>
-                        <InfoHeader />
-                        <WhiteHeader />
-                    </Fragment>
-                :
-                    <div>
-                        <MobileHeader/>
-                    </div>
-            }
-            <Grid container direction="column">
+    return (
+        <Grid container direction="column">
                 {/****** MOTIVATION TEXT ******/}
                 <Grid item container direction="row" spacing={largeScreen ? 8 : 2} className={classes.motivationContainer}>
                     <Grid xs sm={1}></Grid>
@@ -133,6 +115,5 @@ export default function About() {
                     <Grid item xs sm={2}></Grid>
                 </Grid>
             </Grid>
-        </Fragment>
-    );
+    )
 }

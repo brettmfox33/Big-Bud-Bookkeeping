@@ -50,31 +50,38 @@ const useStyles = makeStyles({
     check: {
         color: colors.mainPurple,
         marginRight: 5
+    },
+    contactContainer: {
+        marginBottom: 20,
+        padding: 10
     }
 });
 export default function ContactInfo() {
     const classes = useStyles();
 
  return (
-    <Grid container direction="column" item xs={11} sm={3}>
+    <Grid container direction="column" item xs={11} sm={3} className={classes.contactContainer}>
         <Grid className={classes.contactTitle}>Contact Us</Grid>
         <Grid className={classes.titleText}>Let's see if we're a fit!</Grid>
-        <Grid className={classes.mainText}>We’d love to answer your questions about Big Bud Bookkeeping and how we can save you time and money with your canibus business.</Grid>
-        <Grid className={classes.tasksTitle}>Schedule time with us and we’ll:</Grid>
+        {/* <Grid className={classes.mainText}>We’d love to answer your questions about Big Bud Bookkeeping and how we can save you time and money with your canibus business.</Grid> */}
+        {/* <Grid className={classes.tasksTitle}>Schedule time with us and we’ll:</Grid> */}
+        {/* <Grid className={classes.mainText}>We’d love to answer your questions about Big Bud Bookkeeping and how we can save you time and money with your canibus business.</Grid> */}
+        <Grid className={classes.tasksTitle}>Schedule a free 15-minute call with RaeLyn:</Grid>
+        
         <Grid className={classes.tasks}>
             <Grid className={classes.task}>
                 <FontAwesomeIcon icon={faCheck}  className={classes.check}/>
-                Expand on the services you’re interested in</Grid>
+                Tell us where you are now and where you want to be.</Grid>
             <Grid className={classes.task}>
                 <FontAwesomeIcon icon={faCheck}  className={classes.check}/>
-                Answer all your questions about Big Bud Bookkeeping
+                Expand on the services that will get you there.
             </Grid>
             <Grid className={classes.task}>
                 <FontAwesomeIcon icon={faCheck}  className={classes.check}/>
-                Begin an evaluation and cost estimation
+                Answer all your questions about Big Bud Bookkeeping.
             </Grid>
         </Grid>
-        <Grid className={classes.otherOptions}>You can also contact us directly by phone or email.  </Grid>
+        <Grid className={classes.otherOptions}>You can also contact us directly by phone or email.</Grid>
     </Grid>
  )
 }

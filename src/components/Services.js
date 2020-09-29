@@ -7,6 +7,7 @@ import image from '../images/Under-Construction.png'
 import { Grid, useMediaQuery } from '@material-ui/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import MobileHeader from './headers/MobileHeader';
+import SmallBanner from './SmallBanner';
 
 const useStyles = makeStyles({
     container: {
@@ -32,6 +33,11 @@ export default function Services() {
                         <MobileHeader />
                     </div>
             }
+            <SmallBanner 
+                title="Services"
+                text="Our step by step process helps implement a solid 
+                foundation for your business."
+            />
             <Grid container direction="row" justify="center" className={classes.container}>
                 <img alt="Under Construction" src={image}/>
             </Grid>

@@ -8,10 +8,11 @@ import InfoHeader from './headers/InfoHeader';
 import ContactCalendly from './contact_components/ContactCalendly';
 import ContactInfo from './contact_components/ContactInfo';
 import MobileHeader from './headers/MobileHeader';
+import SmallBanner from './SmallBanner';
 
 const useStyles = makeStyles({
     contactContainer: {
-        marginTop: 50
+        marginTop: 70
     }
 });
 
@@ -33,6 +34,11 @@ export default function Appointment() {
                         <MobileHeader />
                     </div>
             }
+            <SmallBanner 
+                title="Schedule Appointment"
+                text="Let’s talk and see how we can solve your unique
+                problems."
+            />
             <Grid 
                 container 
                 direction="row" 
