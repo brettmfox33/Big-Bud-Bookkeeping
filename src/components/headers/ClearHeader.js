@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 const HeaderButton = withStyles ({
     root: {
-        fontFamily: fonts.textFont,
         '&:hover': {
             fontWeight: 'bold'
         }
@@ -17,6 +16,7 @@ const HeaderButton = withStyles ({
 
 const AppointmentButton = withStyles({
     root: {
+        fontFamily: fonts.textFont,
         borderRadius: 50,
         height: 50,
         width: 215,
@@ -28,7 +28,7 @@ const AppointmentButton = withStyles({
             borderColor: colors.mainPurple
           }
     }
-})(HeaderButton);
+})(Button);
 
 const useStyles = makeStyles({
     headerBottomMain: {

@@ -35,7 +35,7 @@ export default function AboutMain() {
                     </div>
             }
             <SmallBanner 
-                title="ABOUT US "
+                title="About Us"
                 text="We have walked in your shoes and lived in the shadow of 
                 the paperwork mountain."
             />

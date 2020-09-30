@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import { Button, Drawer, Grid } from '@material-ui/core'
+import { Button, Drawer, Grid, withStyles } from '@material-ui/core'
 import {faBars, faEnvelope, faPhoneAlt} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import colors from "../../styles/colors";
@@ -9,9 +9,17 @@ import { IconButton} from '@material-ui/core';
 import { useState } from 'react';
 import MobileDrawer from '../MobileDrawer';
 import { Link } from "react-router-dom";
-import { faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import fonts from '../../styles/fonts';
 
+const CustomIconButton = withStyles ({
+    root: {
+        fontFamily: fonts.textFont,
+        '&:hover': {
+            backgroundColor: 'white'
+        }
+    }
+})(IconButton);
 
 const useStyles = makeStyles({
     mobileHeader: {
@@ -45,7 +53,7 @@ const useStyles = makeStyles({
         color: colors.mainPurple
     },
     linkedInLogo: {
-        fontSize: 26,
+        fontSize: 28,
         marginTop: 2,
         marginLeft: 10,
         color: colors.mainPurple
@@ -120,16 +128,16 @@ export default function MobileHeader() {
                         918-978-4853
                     </Grid>
                     <Grid container justify="center" item direction="row">
-                        <IconButton 
+                        <CustomIconButton 
                             disableFocusRipple={true} 
                             disableRipple={true} 
                             size="small"
                             href="https://www.facebook.com/BigBudBookkeeping/"
                             target="_blank"
                         >
-                            <FontAwesomeIcon icon={faFacebook}  className={classes.facebookLogo}/>
-                        </IconButton>
-                        <IconButton
+                            <FontAwesomeIcon icon={faFacebookF}  className={classes.facebookLogo}/>
+                        </CustomIconButton>
+                        <CustomIconButton
                             disableFocusRipple={true} 
                             disableRipple={true} 
                             size="small" 
@@ -137,8 +145,8 @@ export default function MobileHeader() {
                             href="https://www.linkedin.com/in/raelyn-yoder-820068196/"
                             target="_blanke"
                         >
-                            <FontAwesomeIcon icon={faLinkedin}/>
-                        </IconButton>
+                            <FontAwesomeIcon icon={faLinkedinIn}/>
+                        </CustomIconButton>
                     </Grid>
                 </Grid>
             </Drawer>

@@ -34,7 +34,7 @@ export default function Services() {
                     </div>
             }
             <SmallBanner 
-                title="SERVICES"
+                title="Services"
                 text="Our step by step process helps implement a solid 
                 foundation for your business."
             />

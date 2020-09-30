@@ -35,7 +35,7 @@ export default function Appointment() {
                     </div>
             }
             <SmallBanner 
-                title="SCHEDULE APPOINTMENT"
+                title="Schedule Appointment"
                 text="Let’s talk and see how we can solve your unique
                 problems."
             />
