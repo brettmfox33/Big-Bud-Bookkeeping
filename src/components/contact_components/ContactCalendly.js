@@ -14,7 +14,7 @@ export default function ContactCalendly() {
         pageSettings={{
             primaryColor: "60258d"
         }}
-        url="https://calendly.com/brettmfox33/15min"
+        url="https://calendly.com/bigbudbookkeeping/15min"
     />
 </Grid>
  )

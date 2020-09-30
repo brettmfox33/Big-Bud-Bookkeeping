@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 
 export default function Appointment() {
     const classes = useStyles();
-    const largeScreen = useMediaQuery('(min-width:1000px)');
+    const largeScreen = useMediaQuery('(min-width:1000px)', {defaultMatches: true});
 
     return(
         <Fragment>
@@ -35,7 +35,7 @@ export default function Appointment() {
                     </div>
             }
             <SmallBanner 
-                title="Schedule Appointment"
+                title="SCHEDULE APPOINTMENT"
                 text="Let’s talk and see how we can solve your unique
                 problems."
             />

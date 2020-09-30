@@ -61,7 +61,7 @@ const useStyles = makeStyles({
 
 export default function Contact() {
     const classes = useStyles();
-    const largeScreen = useMediaQuery('(min-width:1000px)');
+    const largeScreen = useMediaQuery('(min-width:1000px)', {defaultMatches: true});
 
     return(
         <Grid 

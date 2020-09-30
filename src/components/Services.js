@@ -10,14 +10,14 @@ import MobileHeader from './headers/MobileHeader';
 import SmallBanner from './SmallBanner';
 
 const useStyles = makeStyles({
-    container: {
-        marginTop: 50
+    image: {
+        width: '100%'
     }
 });
 
 export default function Services() {
     const classes = useStyles();
-    const largeScreen = useMediaQuery('(min-width:1000px)');
+    const largeScreen = useMediaQuery('(min-width:1000px)', {defaultMatches: true});
 
     return(
         <Fragment>
@@ -34,12 +34,12 @@ export default function Services() {
                     </div>
             }
             <SmallBanner 
-                title="Services"
+                title="SERVICES"
                 text="Our step by step process helps implement a solid 
                 foundation for your business."
             />
-            <Grid container direction="row" justify="center" className={classes.container}>
-                <img alt="Under Construction" src={image}/>
+            <Grid container direction="row" justify="center">
+                <img alt="Under Construction" src={image} className={classes.image}/>
             </Grid>
         </Fragment>
     );

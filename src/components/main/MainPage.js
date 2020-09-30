@@ -11,7 +11,7 @@ import Contact from '../contact_components/Contact'
 import Banner from './Banner';
 
 export default function MainPage() {
-    const largeScreen = useMediaQuery('(min-width:1000px)');
+    const largeScreen = useMediaQuery('(min-width:1000px)', {defaultMatches: true});
 
     return(
         <Grid container direction="column">

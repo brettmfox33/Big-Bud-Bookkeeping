@@ -18,14 +18,22 @@ const useStyles = makeStyles({
         fontWeight: 400,
         fontSize: 18,
         lineHeight: 1.8
+    },
+    f: {
+        fontSize: 35,
+        color: colors.mainPurple,
+        marginBottom: 10
     }
 });
 
-export default function Service({title, text}) {
+export default function Service({title, text, icon}) {
     const classes = useStyles();
 
     return (
         <Grid container direction="column">
+            <Grid className={classes.f}>
+                {icon}
+            </Grid>
             <Grid className={classes.title}>
                 {title}
             </Grid>

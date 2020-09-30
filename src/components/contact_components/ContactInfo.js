@@ -60,14 +60,12 @@ export default function ContactInfo() {
     const classes = useStyles();
 
  return (
-    <Grid container direction="column" item xs={11} sm={3} className={classes.contactContainer}>
+    <Grid container direction="column" item xs={11} sm={4} className={classes.contactContainer}>
         <Grid className={classes.contactTitle}>Contact Us</Grid>
         <Grid className={classes.titleText}>Let's see if we're a fit!</Grid>
         {/* <Grid className={classes.mainText}>We’d love to answer your questions about Big Bud Bookkeeping and how we can save you time and money with your canibus business.</Grid> */}
         {/* <Grid className={classes.tasksTitle}>Schedule time with us and we’ll:</Grid> */}
-        {/* <Grid className={classes.mainText}>We’d love to answer your questions about Big Bud Bookkeeping and how we can save you time and money with your canibus business.</Grid> */}
         <Grid className={classes.tasksTitle}>Schedule a free 15-minute call with RaeLyn:</Grid>
-        
         <Grid className={classes.tasks}>
             <Grid className={classes.task}>
                 <FontAwesomeIcon icon={faCheck}  className={classes.check}/>

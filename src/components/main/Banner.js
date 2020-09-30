@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core'
 import { Grid, useMediaQuery, Button, withStyles } from '@material-ui/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import image from '../../images/unknown.png'
+import image from '../../images/tempBanner.jpeg'
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 import { Link } from "react-router-dom";
@@ -61,7 +61,7 @@ const useStyles = makeStyles({
 
 export default function Banner() {
     const classes = useStyles();
-    const largeScreen = useMediaQuery('(min-width:1000px)');
+    const largeScreen = useMediaQuery('(min-width:1000px)', {defaultMatches: true});
 
     return(
         <Grid

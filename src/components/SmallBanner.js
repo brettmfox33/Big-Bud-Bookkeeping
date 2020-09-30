@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core'
 import { Grid, useMediaQuery } from '@material-ui/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import image from '../images/unknown.png'
+import image from '../images/tempBanner.jpeg'
 import fonts from '../styles/fonts';
 import colors from '../styles/colors';
 
@@ -37,7 +37,7 @@ const useStyles = makeStyles({
 
 export default function SmallBanner({title, text}) {
     const classes = useStyles();
-    const largeScreen = useMediaQuery('(min-width:1000px)');
+    const largeScreen = useMediaQuery('(min-width:1000px)', {defaultMatches: true});
 
     return(
         <Grid

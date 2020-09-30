@@ -1,14 +1,23 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import { Grid, IconButton} from '@material-ui/core';
+import { Grid, IconButton, withStyles} from '@material-ui/core';
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faFacebook} from '@fortawesome/free-brands-svg-icons'
-import {faLinkedin} from '@fortawesome/free-brands-svg-icons'
+import {faFacebookF} from '@fortawesome/free-brands-svg-icons'
+import {faLinkedinIn} from '@fortawesome/free-brands-svg-icons'
 import {faPhoneAlt} from '@fortawesome/free-solid-svg-icons'
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
+
+const CustomIconButton = withStyles ({
+    root: {
+        fontFamily: fonts.textFont,
+        '&:hover': {
+            backgroundColor: colors.mainPurple
+        }
+    }
+})(IconButton);
 
 const useStyles = makeStyles({
     infoHeader: {
@@ -44,7 +53,7 @@ const useStyles = makeStyles({
         color: "white"
     },
     facebookLogo: {
-        fontSize: 25,
+        fontSize: 23,
         color: "white"
     }
   });
@@ -54,43 +63,41 @@ export default function InfoHeader () {
 
     return (
         <Grid
-            id="contactContainer"
             className={classes.infoHeader}
             container
             direction="row"
             justify="flex-end"
             alignItems="center"
         >
-            <div id="contactInfo" className={classes.contactInfo}>
-                <div id="emailInfo">
+            <div className={classes.contactInfo}>
+                <div>
                     <FontAwesomeIcon icon={faEnvelope}/>
                     <span className={classes.emailText}>sales@bigbudbookkeeping.com</span>
                 </div>
-                <div id="phoneInfo" className={classes.phoneInfo}>
+                <div className={classes.phoneInfo}>
                     <FontAwesomeIcon icon={faPhoneAlt}/>
                     <span className={classes.phoneText}>918-978-4853</span>
                 </div>
             </div>
-            <div id="socialMediaIcons" className={classes.socialMediaIcons}>
-                <IconButton 
+            <div className={classes.socialMediaIcons}>
+                <CustomIconButton 
                     disableFocusRipple={true} 
                     disableRipple={true} 
                     size="small"
                     href="https://www.facebook.com/BigBudBookkeeping/"
                     target="_blank"
                 >
-                    <FontAwesomeIcon icon={faFacebook}  className={classes.facebookLogo}/>
-                </IconButton>
-                <IconButton 
+                    <FontAwesomeIcon icon={faFacebookF}  className={classes.facebookLogo}/>
+                </CustomIconButton>
+                <CustomIconButton 
                     disableFocusRipple={true} 
                     disableRipple={true} 
                     size="small" 
-                    className={classes.linkedInLogo}
                     href="https://www.linkedin.com/in/raelyn-yoder-820068196/"
-                    target="_blanke"
+                    target="_blank"
                 >
-                    <FontAwesomeIcon icon={faLinkedin}/>
-                </IconButton>
+                    <FontAwesomeIcon icon={faLinkedinIn} className={classes.linkedInLogo}/>
+                </CustomIconButton>
             </div>
         </Grid>
     )

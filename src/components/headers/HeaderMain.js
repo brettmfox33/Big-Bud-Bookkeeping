@@ -29,7 +29,7 @@ export default function HeaderMain() {
           <Fragment>
                {
                     showClearHeader
-                    ? <WhiteHeader />
+                    ? <ClearHeader />
                     : <WhiteHeader />
                 } 
           </Fragment>

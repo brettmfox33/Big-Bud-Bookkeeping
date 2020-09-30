@@ -10,7 +10,8 @@ const HeaderButton = withStyles ({
     root: {
         fontFamily: fonts.textFont,
         '&:hover': {
-            backgroundColor: "white"
+            backgroundColor: "white",
+            fontWeight: 'bold'
         }
     }
 })(Button);

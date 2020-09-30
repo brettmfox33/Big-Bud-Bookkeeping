@@ -38,13 +38,16 @@ const useStyles = makeStyles({
         color: 'white',
         fontSize: 30,
         textAlign: "center",
-        marginBottom: 34
+        marginBottom: 15
+    },
+    button: {
+        textDecoration: 'none'
     }
 });
 
 export default function ServiceBanner() {
     const classes = useStyles();
-    const largeScreen = useMediaQuery('(min-width:1000px)');
+    const largeScreen = useMediaQuery('(min-width:1000px)', {defaultMatches: true});
 
     return (
         <Grid container direction="column" justify="center" alignItems="center" className={largeScreen ? classes.bannerContainer : classes.mobileBannerContainer}>
@@ -52,7 +55,7 @@ export default function ServiceBanner() {
                 Bring your business back into focus with our step by step process.
             </Grid>
             <Grid item>
-                <Link to="/services">
+                <Link to="/services" className={classes.button}>
                     <BannerButton>Process Overview</BannerButton>
                 </Link>
             </Grid>

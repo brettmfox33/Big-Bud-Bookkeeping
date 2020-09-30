@@ -8,7 +8,10 @@ import { Link } from "react-router-dom";
 
 const HeaderButton = withStyles ({
     root: {
-        fontFamily: fonts.textFont
+        fontFamily: fonts.textFont,
+        '&:hover': {
+            fontWeight: 'bold'
+        }
     }
 })(Button);
 
