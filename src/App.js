@@ -3,14 +3,11 @@ import './App.css';
 import { Grid } from '@material-ui/core';
 import Footer from './components/footer/Footer';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Services from './components/Services';
 import MainPage from './components/main/MainPage';
 import AboutMain from './components/about/AboutMain';
 import Contact from './components/Contact';
+import ServicesMain from './components/services/ServicesMain';
 import image from './images/Under-Construction.png'
-
-
-
 
 function App() {
 
@@ -28,7 +25,7 @@ function App() {
                         <AboutMain />
                     </Route>
                     <Route exact path="/services">
-                        <Services />
+                        <ServicesMain />
                     </Route>
                     <Route exact path="/contact">
                         <Contact />
