@@ -3,7 +3,7 @@ import { jsx } from '@emotion/core';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import { List, ListItem, ListItemText, Divider, Grid } from '@material-ui/core';
 import colors from "../styles/colors";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import image from '../images/BigBudBookkeeping_Logo_Text.png'
 import fonts from '../styles/fonts';
 
@@ -34,6 +34,7 @@ const useStyles = makeStyles({
 
 export default function MobileDrawer() {
     const classes = useStyles();
+    const location = useLocation();
 
     return (
         <div className={classes.mobileDrawerContainer}>
@@ -55,6 +56,11 @@ export default function MobileDrawer() {
                 <Link to="/services" className={classes.link}>
                     <ListItem button key="Services">
                         <ListItemText primary="Services" classes={{primary: classes.listItemText}}></ListItemText>
+                    </ListItem>
+                </Link>
+                <Link to="/guarantee" className={classes.link}>
+                    <ListItem button key="Gaurantee">
+                        <ListItemText primary="Gaurantee" classes={{primary: classes.listItemText}}></ListItemText>
                     </ListItem>
                 </Link>
                 <Link to="/contact" className={classes.link}>

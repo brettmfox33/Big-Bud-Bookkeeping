@@ -1,13 +1,11 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { Fragment } from "react"
-import WhiteHeader from "../headers/WhiteHeader"
-import InfoHeader from '../headers/InfoHeader';
-import { useMediaQuery, Grid } from '@material-ui/core'
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import MobileHeader from '../headers/MobileHeader';
-import AboutContent from './AboutContent';
-import SmallBanner from '../SmallBanner';
+import SmallBanner from '../../components/SmallBanner';
+import InfoHeader from '../../components/headers/InfoHeader';
+import { useMediaQuery, makeStyles, Grid } from '@material-ui/core';
+import WhiteHeader from "../../components/headers/WhiteHeader"
+import MobileHeader from '../../components/headers/MobileHeader';
 import image from '../../images/Under-Construction.png'
 
 const useStyles = makeStyles({
@@ -16,11 +14,11 @@ const useStyles = makeStyles({
     }
 });
 
-export default function AboutMain() {
+export default function GuaranteeMain() {
     const classes = useStyles();
     const largeScreen = useMediaQuery('(min-width:1000px)', {defaultMatches: true});
 
-    return(
+    return (
         <Fragment>
             {
                 largeScreen 
@@ -35,14 +33,12 @@ export default function AboutMain() {
                     </div>
             }
             <SmallBanner 
-                title="About Us"
-                text="We have walked in your shoes and lived in the shadow of 
-                the paperwork mountain."
+                title="Our Guarantee"
+                text="The Big Bud Bookkeeping team values your business."
             />
             <Grid container direction="row" justify="center">
                 <img alt="Under Construction" src={image} className={classes.image}/>
             </Grid>
-            {/* <AboutContent /> */}
         </Fragment>
-    );
+    )
 }

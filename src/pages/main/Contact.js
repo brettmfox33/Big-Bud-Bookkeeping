@@ -4,8 +4,8 @@ import { Grid, useMediaQuery } from '@material-ui/core';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
-import ContactCalendly from './ContactCalendly';
-import ContactInfo from './ContactInfo';
+import ContactCalendly from '../../components/contact/ContactCalendly';
+import ContactInfo from '../../components/contact/ContactInfo';
 
 const useStyles = makeStyles({
     contactContainer: {

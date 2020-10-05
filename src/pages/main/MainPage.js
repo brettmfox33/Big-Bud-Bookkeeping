@@ -7,7 +7,7 @@ import HeaderMain from '../headers/HeaderMain';
 import MobileHeader from '../headers/MobileHeader';
 import Services from './services/Services';
 import ServiceBanner from './services/ServiceBanner'
-import Contact from '../contact_components/Contact'
+import Contact from '../contact/ContactMain'
 import Banner from './Banner';
 
 export default function MainPage() {

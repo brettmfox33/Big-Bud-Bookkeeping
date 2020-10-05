@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { Fragment } from "react"
-import WhiteHeader from "../headers/WhiteHeader"
-import InfoHeader from '../headers/InfoHeader';
+import WhiteHeader from "../../components/headers/WhiteHeader"
+import InfoHeader from '../../components/headers/InfoHeader';
 import image from '../../images/Under-Construction.png'
 import { Grid, useMediaQuery } from '@material-ui/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import MobileHeader from '../headers/MobileHeader';
-import SmallBanner from '../SmallBanner';
+import MobileHeader from '../../components/headers/MobileHeader';
+import SmallBanner from '../../components/SmallBanner';
 import ServiceItem from './ServiceItem';
 
 const useStyles = makeStyles({
@@ -42,7 +42,7 @@ export default function ServicesMain() {
                 text="Our step by step process helps implement a solid 
                 foundation for your business."
             />
-            <Grid container direction="row" justify="center">
+            {/* <Grid container direction="row" justify="center">
                 <Grid item container direction="column" xs={6}  className={classes.servicesContainer}>
                     <ServiceItem 
                         number="1"
@@ -65,10 +65,10 @@ export default function ServicesMain() {
                         text="This is the text!"
                     />
                 </Grid>
-            </Grid>
-            {/* <Grid container direction="row" justify="center">
-                <img alt="Under Construction" src={image} className={classes.image}/>
             </Grid> */}
+            <Grid container direction="row" justify="center">
+                <img alt="Under Construction" src={image} className={classes.image}/>
+            </Grid>
         </Fragment>
     );
 }

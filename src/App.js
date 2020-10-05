@@ -4,17 +4,14 @@ import { Grid } from '@material-ui/core';
 import Footer from './components/footer/Footer';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import MainPage from './components/main/MainPage';
-import AboutMain from './components/about/AboutMain';
-import Contact from './components/Contact';
-import ServicesMain from './components/services/ServicesMain';
-import image from './images/Under-Construction.png'
+import AboutMain from './pages/about/AboutMain';
+import ContactMain from './pages/contact/ContactMain';
+import ServicesMain from './pages/services/ServiceMain';
+import GuaranteeMain from './pages/guarantee/GuaranteeMain';
 
 function App() {
 
     return (
-        // <Grid container justify="center">
-        //     <img alt="Under Construction" src={image}/>
-        // </Grid>
         <Router>
             <Grid container direction="column">
                 <Switch>
@@ -28,7 +25,10 @@ function App() {
                         <ServicesMain />
                     </Route>
                     <Route exact path="/contact">
-                        <Contact />
+                        <ContactMain />
+                    </Route>
+                    <Route exact path="/guarantee">
+                        <GuaranteeMain />
                     </Route>
                 </Switch>
                 <Footer />
