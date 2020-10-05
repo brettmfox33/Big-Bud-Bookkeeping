@@ -6,9 +6,9 @@ import Service from './Service';
 import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faHandHoldingUsd} from '@fortawesome/free-solid-svg-icons';
-import {faBookOpen} from '@fortawesome/free-solid-svg-icons';
-import {faCommentDollar} from '@fortawesome/free-solid-svg-icons';
+import {faHandHoldingUsd} from '@fortawesome/pro-light-svg-icons';
+import {faFileSpreadsheet} from '@fortawesome/pro-light-svg-icons';
+import {faCommentAltDollar} from '@fortawesome/pro-light-svg-icons';
 
 const useStyles = makeStyles({
     servicesContainer: {
@@ -55,14 +55,14 @@ export default function Services() {
                             title="Bookkeeping"
                             text="We offer a range of bookkeeping services depending on client needs. 
                             Read more about how we help businesses of all sizes take control of their finances."
-                            icon={<FontAwesomeIcon icon={faBookOpen} />}
+                            icon={<FontAwesomeIcon icon={faFileSpreadsheet} />}
                         />
                     </Grid>
                     <Grid item xs={10} sm={3} className={classes.service}>
                         <Service 
                             title="Advisory"
                             text="Our advisory services ensure your business is running smoothly in full compliance with all current regulations."
-                            icon={<FontAwesomeIcon icon={faCommentDollar} />}
+                            icon={<FontAwesomeIcon icon={faCommentAltDollar} />}
                         />
                     </Grid>
                     <Grid item xs={10} sm={3} className={classes.service}>

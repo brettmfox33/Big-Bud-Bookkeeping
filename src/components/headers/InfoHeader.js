@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faFacebookF} from '@fortawesome/free-brands-svg-icons'
 import {faLinkedinIn} from '@fortawesome/free-brands-svg-icons'
 import {faPhoneAlt} from '@fortawesome/free-solid-svg-icons'
-import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
+import {faEnvelope} from '@fortawesome/pro-solid-svg-icons'
 
 const CustomIconButton = withStyles ({
     root: {

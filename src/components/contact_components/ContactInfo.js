@@ -5,7 +5,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faCheck} from '@fortawesome/free-solid-svg-icons'
+import {faCheck} from '@fortawesome/pro-solid-svg-icons'
 
 const useStyles = makeStyles({
     contactTitle: {

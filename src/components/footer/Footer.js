@@ -5,7 +5,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faCopyright} from '@fortawesome/free-solid-svg-icons'
+import {faCopyright} from '@fortawesome/pro-light-svg-icons'
 import {faFacebookF} from '@fortawesome/free-brands-svg-icons'
 import {faLinkedinIn} from '@fortawesome/free-brands-svg-icons'
 import {faCat} from '@fortawesome/free-solid-svg-icons'
