@@ -36,13 +36,12 @@ export default function AboutMain() {
             }
             <SmallBanner 
                 title="About Us"
-                text="We have walked in your shoes and lived in the shadow of 
-                the paperwork mountain."
+                text=""
             />
-            <Grid container direction="row" justify="center">
+            {/* <Grid container direction="row" justify="center">
                 <img alt="Under Construction" src={image} className={classes.image}/>
-            </Grid>
-            {/* <AboutContent /> */}
+            </Grid> */}
+            <AboutContent />
         </Fragment>
     );
 }

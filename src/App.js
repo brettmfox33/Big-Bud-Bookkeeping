@@ -3,11 +3,10 @@ import './App.css';
 import { Grid } from '@material-ui/core';
 import Footer from './components/footer/Footer';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import MainPage from './components/main/MainPage';
+import MainPage from './pages/main/MainPage';
 import AboutMain from './pages/about/AboutMain';
 import ContactMain from './pages/contact/ContactMain';
 import ServicesMain from './pages/services/ServiceMain';
-import GuaranteeMain from './pages/guarantee/GuaranteeMain';
 
 function App() {
 
@@ -26,9 +25,6 @@ function App() {
                     </Route>
                     <Route exact path="/contact">
                         <ContactMain />
-                    </Route>
-                    <Route exact path="/guarantee">
-                        <GuaranteeMain />
                     </Route>
                 </Switch>
                 <Footer />

@@ -57,10 +57,6 @@ const useStyles = makeStyles({
         marginLeft: 25,
         color: "white"
     },
-    guaranteeButton: {
-        marginLeft: 25,
-        color: "white"
-    },
     aboutButton: {
         color: "white"
     },
@@ -94,9 +90,6 @@ export default function ClearHeader() {
                 </Link>
                 <Link to="/services" className={classes.link}>
                     <HeaderButton disableFocusRipple={true} disableRipple={true} className={classes.servicesButton}> Services </HeaderButton>
-                </Link>
-                <Link to="/guarantee" className={classes.link}>
-                    <HeaderButton disableFocusRipple={true} disableRipple={true} className={classes.guaranteeButton}> Our Gaurantee </HeaderButton>
                 </Link>
                 <Link to="/contact" className={classes.link}>
                     <AppointmentButton variant="outlined" className={classes.scheduleAppointment}> Schedule Appointment </AppointmentButton>

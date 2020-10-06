@@ -58,11 +58,6 @@ export default function MobileDrawer() {
                         <ListItemText primary="Services" classes={{primary: classes.listItemText}}></ListItemText>
                     </ListItem>
                 </Link>
-                <Link to="/guarantee" className={classes.link}>
-                    <ListItem button key="Gaurantee">
-                        <ListItemText primary="Gaurantee" classes={{primary: classes.listItemText}}></ListItemText>
-                    </ListItem>
-                </Link>
                 <Link to="/contact" className={classes.link}>
                     <ListItem button key="Contact">
                         <ListItemText primary="Contact" classes={{primary: classes.listItemText}}></ListItemText>

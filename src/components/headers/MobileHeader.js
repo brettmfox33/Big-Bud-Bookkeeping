@@ -32,6 +32,7 @@ const useStyles = makeStyles({
         position: 'fixed',
         top: 0,
         backgroundColor: 'white',
+        zIndex: 9999
     },
     mobileLogo: {
         display: "flex",

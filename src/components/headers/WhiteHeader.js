@@ -113,9 +113,6 @@ export default function ClearHeader() {
                 <Link to="/services" className={classes.servicesLink}>
                     <HeaderButton disableFocusRipple={true} disableRipple={true}  className={location.pathname === '/services' ? classes.selectedLink : null}> Services </HeaderButton>
                 </Link>
-                <Link to="/guarantee" className={classes.servicesLink}>
-                    <HeaderButton disableFocusRipple={true} disableRipple={true}  className={location.pathname === '/guarantee' ? classes.selectedLink : null}> Our Gaurantee </HeaderButton>
-                </Link>
                 <Link to="/contact" className={classes.appointmentButtonContainer}>
                     <AppointmentButton variant="outlined" className={location.pathname === '/contact' ? classes.selectedScheduleAppointment : classes.scheduleAppointment}> Schedule Appointment </AppointmentButton>
                 </Link>
