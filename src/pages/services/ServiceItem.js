@@ -49,7 +49,7 @@ const useStyles = makeStyles({
     }
 });
 
-export default function ServiceItem({number, title, subTitle, text}) {
+export default function ServiceItem({icon, title, subTitle, text}) {
     const classes = useStyles();
 
     const [open, setOpen] = useState(false)
@@ -58,7 +58,7 @@ export default function ServiceItem({number, title, subTitle, text}) {
         <Grid item className={classes.serviceContainer}>
             <Divider className={classes.divider} />
             <Grid container direction="row" className={classes.top}>
-                <Grid item xs={1} className={classes.stepNumber}> {number} </Grid>
+                <Grid item xs={1} className={classes.stepNumber}> {icon} </Grid>
                 <Grid item xs={10} className={classes.mainTitle}> {title} </Grid>
                 <Grid item xs={1} className={classes.arrowIcon}> 
                     <CustomIconButton

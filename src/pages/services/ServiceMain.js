@@ -9,6 +9,9 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import MobileHeader from '../../components/headers/MobileHeader';
 import SmallBanner from '../../components/SmallBanner';
 import ServiceItem from './ServiceItem';
+import { faCommentAltDollar, faFileSpreadsheet } from '@fortawesome/pro-light-svg-icons';
+import { faHandHoldingUsd } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const useStyles = makeStyles({
     image: {
@@ -39,36 +42,33 @@ export default function ServicesMain() {
             }
             <SmallBanner 
                 title="Services"
-                text="Our step by step process helps implement a solid 
-                foundation for your business."
+                text="Our step by step process helps implement a solid foundation for your business."
             />
-            {/* <Grid container direction="row" justify="center">
+            <Grid container direction="row" justify="center">
                 <Grid item container direction="column" xs={6}  className={classes.servicesContainer}>
                     <ServiceItem 
-                        number="1"
-                        title="Title goes here"
+                        icon={<FontAwesomeIcon icon={faFileSpreadsheet} />}
+                        title="Bookkeeping"
                         subTitle="This is a subtile"
-                        text="This is the text! This is the text! This is the text! This is the text! This is the text! This is the text! This is the text! This is the text!
-                        This is the text! This is the text! This is the text! This is the text!"
+                        text="With technology we transform a pile of receipts into an organized system so your tax preparer can take full advantage of the 280E tax code."
                     />
                     <ServiceItem 
-                        number="2"
-                        title="Title goes here"
+                        icon={<FontAwesomeIcon icon={faCommentAltDollar} />}
+                        title="Advisory"
                         subTitle="This is a subtile"
-                        text="This is the text! This is the text! This is the text! This is the text! This is the text! This is the text! This is the text! This is the text!
-                        This is the text! This is the text! This is the text! This is the text!"
+                        text="Provide assistance with financial planning, understanding financial reports, and developing efficient and complaint workflows with strong internal controls."
                     />
                     <ServiceItem 
-                        number="3"
-                        title="Title goes here"
+                        icon={<FontAwesomeIcon icon={faHandHoldingUsd} />}
+                        title="Budgeting"
                         subTitle="This is a subtile"
-                        text="This is the text!"
+                        text="Help you understand where the money went and to project your cash flow for the future"
                     />
                 </Grid>
-            </Grid> */}
-            <Grid container direction="row" justify="center">
-                <img alt="Under Construction" src={image} className={classes.image}/>
             </Grid>
+            {/* <Grid container direction="row" justify="center">
+                <img alt="Under Construction" src={image} className={classes.image}/>
+            </Grid> */}
         </Fragment>
     );
 }
