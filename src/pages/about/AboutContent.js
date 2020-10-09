@@ -121,7 +121,7 @@ export default function AboutContent() {
         <Grid container direction="column">
                 {/****** MOTIVATION TEXT ******/}
                 <Grid item container direction="row" spacing={largeScreen ? 8 : 2} className={classes.motivationContainer}>
-                    <Grid xs sm={1}></Grid>
+                    <Grid item xs sm={1}></Grid>
                     <Grid item xs={12} sm={4} container justify={largeScreen ? "flex-end" : "center"} className={classes.motivationHeader}>
                         <Grid>Our Motivation</Grid>
                     </Grid>
