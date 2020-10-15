@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core'
 import { Grid, useMediaQuery, Button, withStyles } from '@material-ui/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import image from '../../images/tempBanner.jpeg'
+import image from '../../images/banner3Edit.png'
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 import { Link } from "react-router-dom";
@@ -28,14 +28,14 @@ const AppointmentButton = withStyles({
 
 const useStyles = makeStyles({
     fullBannerMain: {
-        backgroundImage: `linear-gradient(0deg, rgba(20, 20, 20, 0.78), rgba(20, 20, 20, 0.78)), url(${image})`,
+        backgroundImage: `linear-gradient(0deg, rgba(20, 20, 20, 0.7), rgba(20, 20, 20, 0.70)), url(${image})`,
         height: 500,
         backgroundSize: "cover",
         padding: 50,
         marginTop: -75,
     },
     mobileBannerMain: {
-        backgroundImage: `linear-gradient(0deg, rgba(20, 20, 20, 0.78), rgba(20, 20, 20, 0.78)), url(${image})`,
+        backgroundImage: `linear-gradient(0deg, rgba(20, 20, 20, 0.70), rgba(20, 20, 20, 0.70)), url(${image})`,
         height: 500,
         backgroundSize: "cover",
         padding: 50,

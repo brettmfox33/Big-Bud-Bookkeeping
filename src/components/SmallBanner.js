@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     },
     mobileBannerMain: {
         backgroundImage: `linear-gradient(0deg, rgba(20, 20, 20, 0.78), rgba(20, 20, 20, 0.78)), url(${image})`,
-        height: 300,
+        height: 450,
         backgroundSize: "cover",
         padding: 50,
         marginTop: 70

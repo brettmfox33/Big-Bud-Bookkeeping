@@ -7,11 +7,13 @@ import MainPage from './pages/main/MainPage';
 import AboutMain from './pages/about/AboutMain';
 import ContactMain from './pages/contact/ContactMain';
 import ServicesMain from './pages/services/ServiceMain';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
 
     return (
         <Router>
+            <ScrollToTop />
             <Grid container direction="column">
                 <Switch>
                     <Route exact path="/">

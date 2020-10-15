@@ -3,7 +3,7 @@ import { jsx } from '@emotion/core';
 import { Fragment } from "react"
 import WhiteHeader from "../../components/headers/WhiteHeader"
 import InfoHeader from '../../components/headers/InfoHeader';
-import { useMediaQuery, Grid } from '@material-ui/core'
+import { useMediaQuery } from '@material-ui/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import MobileHeader from '../../components/headers/MobileHeader';
 import AboutContent from './AboutContent';
@@ -36,7 +36,7 @@ export default function AboutMain() {
             }
             <SmallBanner 
                 title="About Us"
-                text=""
+                text="Our mission is to provide small business owners the tools and systems necessary to balance their books and their lives. To empower our employees with the skills and tools they need to provide exceptional care and guidance to our clients."
             />
             {/* <Grid container direction="row" justify="center">
                 <img alt="Under Construction" src={image} className={classes.image}/>

@@ -127,10 +127,10 @@ export default function AboutContent() {
                     </Grid>
                     <Grid item xs={12} sm={5} container direction="column" className={largeScreen ? classes.motivationText : classes.mobileMotivationText}>
                         <Grid className={classes.motivationTextTop}>
-                            When we speak with business owners in the cannabis industry they all ask similar questions….Where did all the money go?  
-                            How can they possibly stay on top of the mountain of paperwork?  
-                            How can they be sure they are staying in compliance with an entity that doesn’t state the rules clearly?  
-                            It’s all about internal processes and understanding the rules of the industry.  
+                        When we speak with business owners in the cannabis industry they all ask similar questions…Where did all the money go?  
+                        How can they possibly stay on top of the mountain of paperwork?  
+                        How can they be sure they are staying in compliance with an entity that doesn’t state the rules clearly?  
+                        It’s all about internal processes and understanding the rules of the industry.
 
                         </Grid>
                         <Grid className={classes.motivationBottomText}>
@@ -149,7 +149,7 @@ export default function AboutContent() {
                         <Grid className={classes.whyTextTop}>
                             How do I know?  Well, I have walked miles in your shoes.  
                             My husband and I started a retail business from scratch and lived in the shadow of the mountain.  
-                            My team and I have helped other business owners to climb that mountain, totally transforming our lives and businesses along the way.  
+                            My team and I have helped other business owners to climb that mountain, totally transforming our lives and businesses along the way.   
                         </Grid>
                         <Grid className={classes.whyBottomText}>
                             Now we are on a mission to help small businesses in the cannabis industry escape from the shadow of the mountain so they 
@@ -189,7 +189,7 @@ export default function AboutContent() {
                                 </ListItem>
                                 <ListItem key={5}>
                                     <FontAwesomeIcon icon={faCheck} className={classes.circle}/>
-                                    <ListItemText primary="Define and implement a schedule of services that is tailored to your operational needs" classes={{primary: classes.listItemText}}></ListItemText>
+                                    <ListItemText primary="Define and implement a schedule of services that is tailored to your operational needs." classes={{primary: classes.listItemText}}></ListItemText>
                                 </ListItem>
                                 <ListItem key={6}>
                                     <FontAwesomeIcon icon={faCheck} className={classes.circle}/>
