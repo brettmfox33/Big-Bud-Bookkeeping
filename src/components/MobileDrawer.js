@@ -29,6 +29,11 @@ const useStyles = makeStyles({
     },
     listItemText: {
         fontFamily: fonts.textFont
+    },
+    listItemTextSelected: {
+        fontFamily: fonts.textFont,
+        fontWeight: 'bold',
+        color: colors.mainPurple
     }
   });
 
@@ -45,22 +50,22 @@ export default function MobileDrawer() {
             <List>
                 <Link to="/" className={classes.link}>
                     <ListItem button key="Home">
-                        <ListItemText primary="Home" classes={{primary: classes.listItemText}}></ListItemText>
+                        <ListItemText primary="Home" classes={location.pathname === '/' ? {primary: classes.listItemTextSelected} : {primary: classes.listItemText}}></ListItemText>
                     </ListItem>
                 </Link>
                 <Link to="/about" className={classes.link}>
                     <ListItem button key="About">
-                        <ListItemText primary="About Us" classes={{primary: classes.listItemText}}></ListItemText>
+                        <ListItemText primary="About Us" classes={location.pathname === '/about' ? {primary: classes.listItemTextSelected} : {primary: classes.listItemText}}></ListItemText>
                     </ListItem>
                 </Link>
                 <Link to="/services" className={classes.link}>
                     <ListItem button key="Services">
-                        <ListItemText primary="Services" classes={{primary: classes.listItemText}}></ListItemText>
+                        <ListItemText primary="Services" classes={location.pathname === '/services' ? {primary: classes.listItemTextSelected} : {primary: classes.listItemText}}></ListItemText>
                     </ListItem>
                 </Link>
                 <Link to="/contact" className={classes.link}>
                     <ListItem button key="Contact">
-                        <ListItemText primary="Contact" classes={{primary: classes.listItemText}}></ListItemText>
+                        <ListItemText primary="Contact" classes={location.pathname === '/contact' ? {primary: classes.listItemTextSelected} : {primary: classes.listItemText}}></ListItemText>
                     </ListItem>
                 </Link>
             </List>            
