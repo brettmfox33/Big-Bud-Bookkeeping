@@ -2,9 +2,9 @@
 import { jsx } from '@emotion/core'
 import { Grid, useMediaQuery } from '@material-ui/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import image from '../images/tempBanner.jpeg'
 import fonts from '../styles/fonts';
 import colors from '../styles/colors';
+import image from '../images/smallBanner.png'
 
 const useStyles = makeStyles({
     fullBannerMain: {
