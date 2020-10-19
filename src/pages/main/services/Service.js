@@ -4,6 +4,7 @@ import { Grid } from '@material-ui/core'
 import colors from "../../../styles/colors";
 import fonts from "../../../styles/fonts";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
     title: {
@@ -19,11 +20,14 @@ const useStyles = makeStyles({
         fontSize: 18,
         lineHeight: 1.8
     },
-    f: {
+    icon: {
         fontSize: 35,
         color: colors.mainPurple,
         marginBottom: 10
-    }
+    },
+    link: {
+        textDecoration: "none"
+    },
 });
 
 export default function Service({title, text, icon}) {
@@ -31,12 +35,14 @@ export default function Service({title, text, icon}) {
 
     return (
         <Grid container direction="column">
-            <Grid className={classes.f}>
+            <Grid className={classes.icon}>
                 {icon}
             </Grid>
-            <Grid className={classes.title}>
-                {title}
-            </Grid>
+            <Link to="/services" className={classes.link}>
+                <Grid className={classes.title}>
+                    {title}
+                </Grid>
+            </Link>
             <Grid className={classes.text}>
                 {text}
             </Grid>

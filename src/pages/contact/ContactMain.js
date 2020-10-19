@@ -12,7 +12,7 @@ import SmallBanner from '../../components/SmallBanner';
 
 const useStyles = makeStyles({
     contactContainer: {
-        marginTop: 70
+        marginTop: 50
     }
 });
 
@@ -43,8 +43,8 @@ export default function Appointment() {
                 container 
                 direction="row" 
                 alignItems="center" 
-                justify="space-evenly" 
-                className={classes.contactContainer}
+                justify="space-evenly"
+                className={largeScreen ? null : classes.contactContainer}
             >
                 <Grid item sm={1}></Grid>
                 <ContactInfo />

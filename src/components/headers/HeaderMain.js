@@ -27,11 +27,13 @@ export default function HeaderMain() {
     
       return (
           <Fragment>
-               {
+               {/* {
                     showClearHeader
                     ? <ClearHeader />
-                    : <WhiteHeader />
-                } 
+                     : <WhiteHeader />
+                }  */}
+                <ClearHeader />
+                {/* <WhiteHeader /> */}
           </Fragment>
     )
 }

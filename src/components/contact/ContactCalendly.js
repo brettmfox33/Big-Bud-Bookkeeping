@@ -9,7 +9,7 @@ export default function ContactCalendly() {
     <Grid item xs={12} sm={5}>                    
     <InlineWidget 
         styles={{
-            height: '1000px'
+            height: '1100px'
         }}
         pageSettings={{
             primaryColor: "60258d"
