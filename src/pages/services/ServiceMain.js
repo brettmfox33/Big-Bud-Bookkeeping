@@ -3,7 +3,6 @@ import { jsx } from '@emotion/core';
 import { Fragment } from "react"
 import WhiteHeader from "../../components/headers/WhiteHeader"
 import InfoHeader from '../../components/headers/InfoHeader';
-import image from '../../images/Under-Construction.png'
 import { Divider, Grid, useMediaQuery } from '@material-ui/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import MobileHeader from '../../components/headers/MobileHeader';
@@ -15,9 +14,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import colors from '../../styles/colors';
 
 const useStyles = makeStyles({
-    image: {
-        width: '100%'
-    },
     servicesContainer: {
         margin: 50
     },
@@ -70,9 +66,6 @@ export default function ServicesMain() {
                     <Divider className={classes.divider} />
                 </Grid>
             </Grid>
-            {/* <Grid container direction="row" justify="center">
-                <img alt="Under Construction" src={image} className={classes.image}/>
-            </Grid> */}
         </Fragment>
     );
 }
