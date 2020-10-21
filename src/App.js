@@ -16,9 +16,6 @@ function App() {
             <ScrollToTop />
             <Grid container direction="column">
                 <Switch>
-                    <Route exact path="/">
-                        <MainPage />
-                    </Route>
                     <Route exact path="/about">
                         <AboutMain />
                     </Route>
@@ -27,6 +24,9 @@ function App() {
                     </Route>
                     <Route exact path="/contact">
                         <ContactMain />
+                    </Route>
+                    <Route path="/">
+                        <MainPage />
                     </Route>
                 </Switch>
                 <Footer />
