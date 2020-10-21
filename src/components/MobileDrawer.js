@@ -1,10 +1,9 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import { List, ListItem, ListItemText, Divider, Grid } from '@material-ui/core';
+import { List, ListItem, ListItemText } from '@material-ui/core';
 import colors from "../styles/colors";
 import { Link, useLocation } from 'react-router-dom';
-import image from '../images/BigBudBookkeeping_Logo_Text.png'
 import fonts from '../styles/fonts';
 
 const useStyles = makeStyles({
