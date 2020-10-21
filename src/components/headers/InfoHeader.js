@@ -72,11 +72,11 @@ export default function InfoHeader () {
             <div className={classes.contactInfo}>
                 <div>
                     <FontAwesomeIcon icon={faEnvelope}/>
-                    <span className={classes.emailText}>sales@bigbudbookkeeping.com</span>
+                    <span aria-label="Email us at sales@bigbudbookkeeping.com" className={classes.emailText}>sales@bigbudbookkeeping.com</span>
                 </div>
                 <div className={classes.phoneInfo}>
                     <FontAwesomeIcon icon={faPhoneAlt}/>
-                    <span className={classes.phoneText}>918-978-4853</span>
+                    <span aria-label="Call us at 918-978-4853" className={classes.phoneText}>918-978-4853</span>
                 </div>
             </div>
             <div className={classes.socialMediaIcons}>
@@ -86,6 +86,7 @@ export default function InfoHeader () {
                     size="small"
                     href="https://www.facebook.com/BigBudBookkeeping/"
                     target="_blank"
+                    aria-label="Visit us on Facebook"
                 >
                     <FontAwesomeIcon icon={faFacebookF}  className={classes.facebookLogo}/>
                 </CustomIconButton>
@@ -95,6 +96,7 @@ export default function InfoHeader () {
                     size="small" 
                     href="https://www.linkedin.com/in/raelyn-yoder-820068196/"
                     target="_blank"
+                    aria-label="Visit us on LinkedIn"
                 >
                     <FontAwesomeIcon icon={faLinkedinIn} className={classes.linkedInLogo}/>
                 </CustomIconButton>

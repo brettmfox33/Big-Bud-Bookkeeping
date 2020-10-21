@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core'
 import { Grid, useMediaQuery, Button, withStyles } from '@material-ui/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import image from '../../images/banner.png'
+import image from '../../images/smallBanner.png'
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 import { Link } from "react-router-dom";
@@ -89,7 +89,7 @@ export default function Banner() {
                 {
                     largeScreen ? 
                         <Link to="/contact" className={classes.link}>
-                            <AppointmentButton variant="outlined"> Schedule Appointment </AppointmentButton>
+                            <AppointmentButton aria-label="visit Contact Us page" variant="outlined"> Schedule Appointment </AppointmentButton>
                         </Link>
                     : null
                 }

@@ -149,22 +149,22 @@ export default function ClearHeader() {
         <div className={showWhiteHeader ? classes.headerBottomMain : classesWhite.headerBottomMain}>
             <Link to="/" className={classes.mainLogo}>
                 <Button disableFocusRipple={true} disableRipple={true}>
-                    <img alt="Colored Logo" src={showWhiteHeader ? whiteLogo : logo} className={classes.image}></img>
+                    <img alt="Big Bud Bookkeeping Logo And Home Button" src={showWhiteHeader ? whiteLogo : logo} className={classes.image}></img>
                 </Button>
             </Link>
             <div className={classes.headerLinks}>
                 <Link to="/about" className={classes.link}>
-                    <HeaderButton disableFocusRipple={true} disableRipple={true} className={showWhiteHeader ?  classes.aboutButton : classesWhite.aboutButton}> About Us </HeaderButton>
+                    <HeaderButton aria-label="Visit About Us Page" disableFocusRipple={true} disableRipple={true} className={showWhiteHeader ?  classes.aboutButton : classesWhite.aboutButton}> About Us </HeaderButton>
                 </Link>
                 <Link to="/services" className={classes.link}>
-                    <HeaderButton disableFocusRipple={true} disableRipple={true} className={showWhiteHeader ? classes.servicesButton : classesWhite.servicesButton}> Services </HeaderButton>
+                    <HeaderButton aria-label="Visit Services Page" disableFocusRipple={true} disableRipple={true} className={showWhiteHeader ? classes.servicesButton : classesWhite.servicesButton}> Services </HeaderButton>
                 </Link>
                 <Link to="/contact" className={classes.link}>
                 {
                     showWhiteHeader ?
-                        <AppointmentButton variant="outlined" className={classes.scheduleAppointment}> Schedule Appointment </AppointmentButton>
+                        <AppointmentButton aria-label="Visit Contact Us Page" variant="outlined" className={classes.scheduleAppointment}> Schedule Appointment </AppointmentButton>
                     :
-                        <AppointmentButtonWhite variant="outlined" className={classes.scheduleAppointment}> Schedule Appointment </AppointmentButtonWhite>
+                        <AppointmentButtonWhite aria-label="Visit Contact Us Page" variant="outlined" className={classes.scheduleAppointment}> Schedule Appointment </AppointmentButtonWhite>
                 }
                     </Link>
             </div>

@@ -53,8 +53,8 @@ export default function WebFooterInfo() {
             <Grid item className={classes.rightQuestion}>Ready to learn more?</Grid>
             <Divider orientation="vertical" className={classes.divider}></Divider>
             <Grid item container direction="column" alignItems="center" className={classes.rightText}>
-                <Grid>918-978-4853</Grid>
-                <Grid>sales@bigbudbookkeeping.com</Grid>
+                <Grid aria-label="Call us at 918-978-4853">918-978-4853</Grid>
+                <Grid aria-label="Email us at sales@bigbudbookkeeping.com">sales@bigbudbookkeeping.com</Grid>
             </Grid>
         </Grid>
     </Grid>

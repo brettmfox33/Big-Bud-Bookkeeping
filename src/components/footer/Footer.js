@@ -34,7 +34,7 @@ const useStyles = makeStyles({
     },
     devCredit: {
         fontSize: 14,
-        color: "#C6C6C6",
+        color: "white",
         marginTop: 3
     },
     copyrightText: {
@@ -51,7 +51,7 @@ const useStyles = makeStyles({
         fontSize: 26
     },
     devCreditAnchor: {
-        color: "#C6C6C6",
+        color: "white",
         textDecoration: 'none',
         fontWeight: 'bold'
     },
@@ -80,6 +80,7 @@ export default function Footer() {
                         size="small"
                         href="https://www.facebook.com/BigBudBookkeeping/"
                         target="_blank"
+                        aria-label="Visit us on Facebook"
                     >
                         <FontAwesomeIcon icon={faFacebookF}  className={classes.facebookLogo}/>
                     </CustomIconButton>
@@ -89,6 +90,7 @@ export default function Footer() {
                         size="small"
                         href="https://www.linkedin.com/in/raelyn-yoder-820068196/"
                         target="_blank"
+                        aria-label="Visit us on LinkedIn"
                     >
                         <FontAwesomeIcon icon={faLinkedinIn}  className={classes.linkedInLogo}/>
                     </CustomIconButton>
@@ -98,7 +100,7 @@ export default function Footer() {
                     <span className={classes.copyrightText}>Big Bud Bookkeeping 2020</span>
                     <FontAwesomeIcon icon={faCat}  className={classes.cat}/>
                 </Grid>
-                <Grid className={classes.devCredit}>
+                <Grid className={classes.devCredit} aria-label="Visit the site developer's LinkedIn">
                     Site Built by <a href="https://www.linkedin.com/in/brett-fox-00658a19b/" className={classes.devCreditAnchor}>Fox Digital</a>
                 </Grid>
             </Grid>

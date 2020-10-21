@@ -56,7 +56,7 @@ export default function ServiceBanner() {
             </Grid>
             <Grid item>
                 <Link to="/services" className={classes.button}>
-                    <BannerButton>Process Overview</BannerButton>
+                    <BannerButton aria-label="Visit Services Page">Process Overview</BannerButton>
                 </Link>
             </Grid>
         </Grid>

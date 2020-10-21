@@ -101,7 +101,7 @@ export default function MobileHeader() {
         <div className={classes.mobileHeader}>
             <Link to="/" className={classes.mobileLogo}>
                 <Button disableFocusRipple={true} disableRipple={true}>
-                    <img alt="Colored Logo" src={require('../../images/BigBudBookkeeping_Logo.png')} className={classes.image}></img>
+                    <img alt="Big Bud Bookkeeping Logo" src={require('../../images/BigBudBookkeeping_Logo.png')} className={classes.image}></img>
                 </Button>
             </Link>
             <div className={classes.mobileHeaderMenu}>
@@ -120,13 +120,13 @@ export default function MobileHeader() {
                         <FontAwesomeIcon icon={faEnvelope}/>
                     </Grid>
                     <Grid className={classes.email}>
-                        sales@bigbudbookkeeping.com
+                        <span aria-label="Email us at sales@bigbudbookkeeping.com">sales@bigbudbookkeeping.com</span>
                     </Grid>
                     <Grid  className={classes.phoneIcon}>
                         <FontAwesomeIcon icon={faPhoneAlt}/>
                     </Grid>
                     <Grid className={classes.phoneNumber}>
-                        918-978-4853
+                        <span aria-label="Call us at 918-978-4853">918-978-4853</span>
                     </Grid>
                     <Grid container justify="center" item direction="row">
                         <CustomIconButton 
@@ -135,6 +135,7 @@ export default function MobileHeader() {
                             size="small"
                             href="https://www.facebook.com/BigBudBookkeeping/"
                             target="_blank"
+                            aria-label="Visit us on Facebook"
                         >
                             <FontAwesomeIcon icon={faFacebookF}  className={classes.facebookLogo}/>
                         </CustomIconButton>
@@ -144,7 +145,8 @@ export default function MobileHeader() {
                             size="small" 
                             className={classes.linkedInLogo}
                             href="https://www.linkedin.com/in/raelyn-yoder-820068196/"
-                            target="_blanke"
+                            target="_blank"
+                            aria-label="Visit us on LinkedIn"
                         >
                             <FontAwesomeIcon icon={faLinkedinIn}/>
                         </CustomIconButton>

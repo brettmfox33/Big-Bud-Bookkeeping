@@ -8,7 +8,7 @@ import Services from './services/Services';
 import ServiceBanner from './services/ServiceBanner'
 import Banner from './Banner';
 import Contact from './Contact';
-import ClearHeader from '../../components/headers/WhiteHeader';
+import ClearHeader from '../../components/headers/ClearHeader';
 
 export default function MainPage() {
     const largeScreen = useMediaQuery('(min-width:1000px)', {defaultMatches: true});

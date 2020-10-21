@@ -103,18 +103,18 @@ export default function ClearHeader() {
         <div className={classes.headerBottomMain}>
             <Link to="/" className={classes.mainLogo}>                        
                 <LogoButton disableFocusRipple={true} disableRipple={true}>
-                    <img alt="Colored Logo" src={require('../../images/BigBudBookkeeping_Logo.png')} className={classes.image}></img>
+                    <img alt="Big Bud Bookkeeping Logo And Home Button" src={require('../../images/BigBudBookkeeping_Logo.png')} className={classes.image}></img>
                 </LogoButton>
             </Link>
             <div className={classes.headerLinks}>
                 <Link to="/about" className={classes.link}>
-                    <HeaderButton disableFocusRipple={true} disableRipple={true} className={location.pathname === '/about' ? classes.selectedLink : null}> About Us </HeaderButton>
+                    <HeaderButton aria-label="Visit About Us Page" disableFocusRipple={true} disableRipple={true} className={location.pathname === '/about' ? classes.selectedLink : null}> About Us </HeaderButton>
                 </Link>
                 <Link to="/services" className={classes.servicesLink}>
-                    <HeaderButton disableFocusRipple={true} disableRipple={true}  className={location.pathname === '/services' ? classes.selectedLink : null}> Services </HeaderButton>
+                    <HeaderButton aria-label="Visit Services Page" disableFocusRipple={true} disableRipple={true}  className={location.pathname === '/services' ? classes.selectedLink : null}> Services </HeaderButton>
                 </Link>
                 <Link to="/contact" className={classes.appointmentButtonContainer}>
-                    <AppointmentButton variant="outlined" className={location.pathname === '/contact' ? classes.selectedScheduleAppointment : classes.scheduleAppointment}> Schedule Appointment </AppointmentButton>
+                    <AppointmentButton aria-label="Visit Contact Us Page"  variant="outlined" className={location.pathname === '/contact' ? classes.selectedScheduleAppointment : classes.scheduleAppointment}> Schedule Appointment </AppointmentButton>
                 </Link>
             </div>
         </div>

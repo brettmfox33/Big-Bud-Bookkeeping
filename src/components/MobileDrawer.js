@@ -18,22 +18,16 @@ const useStyles = makeStyles({
         textDecoration: 'none',
         color: 'black'
     },
-    image: {
-        width: 150,
-    },
-    divider: {
-        backgroundColor: colors.mainPurple
-    },
-    imageContainer: {
-        height: 70
-    },
     listItemText: {
         fontFamily: fonts.textFont
     },
     listItemTextSelected: {
         fontFamily: fonts.textFont,
         fontWeight: 'bold',
-        color: colors.mainPurple
+        color: colors.main
+    },
+    linkContainer: {
+        marginTop: 70
     }
   });
 
@@ -43,29 +37,25 @@ export default function MobileDrawer() {
 
     return (
         <div className={classes.mobileDrawerContainer}>
-            <Grid container direction="row" justify="center" alignItems="center" className={classes.imageContainer}>
-                <img alt="Under Construction" src={image} className={classes.image}/>
-            </Grid>
-            <Divider className={classes.divider} />
-            <List>
+            <List className={classes.linkContainer}>
                 <Link to="/" className={classes.link}>
-                    <ListItem button key="Home">
+                    <ListItem button key="Home" aria-label="Visit Home page">
                         <ListItemText primary="Home" classes={location.pathname === '/' ? {primary: classes.listItemTextSelected} : {primary: classes.listItemText}}></ListItemText>
                     </ListItem>
                 </Link>
                 <Link to="/about" className={classes.link}>
                     <ListItem button key="About">
-                        <ListItemText primary="About Us" classes={location.pathname === '/about' ? {primary: classes.listItemTextSelected} : {primary: classes.listItemText}}></ListItemText>
+                        <ListItemText aria-label="Visit About Us page" primary="About Us" classes={location.pathname === '/about' ? {primary: classes.listItemTextSelected} : {primary: classes.listItemText}}></ListItemText>
                     </ListItem>
                 </Link>
                 <Link to="/services" className={classes.link}>
                     <ListItem button key="Services">
-                        <ListItemText primary="Services" classes={location.pathname === '/services' ? {primary: classes.listItemTextSelected} : {primary: classes.listItemText}}></ListItemText>
+                        <ListItemText aria-label="Visit Services page" primary="Services" classes={location.pathname === '/services' ? {primary: classes.listItemTextSelected} : {primary: classes.listItemText}}></ListItemText>
                     </ListItem>
                 </Link>
                 <Link to="/contact" className={classes.link}>
                     <ListItem button key="Contact">
-                        <ListItemText primary="Contact" classes={location.pathname === '/contact' ? {primary: classes.listItemTextSelected} : {primary: classes.listItemText}}></ListItemText>
+                        <ListItemText aria-label="Visit Contact Us page" primary="Contact" classes={location.pathname === '/contact' ? {primary: classes.listItemTextSelected} : {primary: classes.listItemText}}></ListItemText>
                     </ListItem>
                 </Link>
             </List>            
