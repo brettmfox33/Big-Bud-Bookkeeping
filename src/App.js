@@ -8,6 +8,8 @@ import AboutMain from './pages/about/AboutMain';
 import ContactMain from './pages/contact/ContactMain';
 import ServicesMain from './pages/services/ServiceMain';
 import ScrollToTop from './components/ScrollToTop';
+import TermsMain from './pages/terms/TermsMain';
+import PrivacyMain from './pages/privacy/PrivacyMain';
 
 function App() {
 
@@ -24,6 +26,12 @@ function App() {
                     </Route>
                     <Route exact path="/contact">
                         <ContactMain />
+                    </Route>
+                    <Route path="/terms">
+                        <TermsMain />
+                    </Route>
+                    <Route path="/privacy">
+                        <PrivacyMain />
                     </Route>
                     <Route path="/">
                         <MainPage />

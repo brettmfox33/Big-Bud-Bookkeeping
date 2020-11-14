@@ -6,11 +6,14 @@ import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCopyright} from '@fortawesome/pro-light-svg-icons'
+import {faHeart} from '@fortawesome/pro-solid-svg-icons'
 import {faFacebookF} from '@fortawesome/free-brands-svg-icons'
 import {faLinkedinIn} from '@fortawesome/free-brands-svg-icons'
 import {faCat} from '@fortawesome/free-solid-svg-icons'
+import {faCircle} from '@fortawesome/free-solid-svg-icons'
 import WebFooterInfo from './WebFooterInfo';
 import MobileFooterInfo from './MobileFooterInfo';
+import { Link } from 'react-router-dom';
 
 const CustomIconButton = withStyles ({
     root: {
@@ -52,13 +55,38 @@ const useStyles = makeStyles({
     },
     devCreditAnchor: {
         color: "white",
-        textDecoration: 'none',
+        textDecoration: "none",
         fontWeight: 'bold'
     },
-    cat: {
+    catIcon: {
         color: "white",
         marginLeft: 5,
         marginBottom: 2
+    },
+    heartIcon: {
+        color: "white"
+    },
+    termsButton: {
+        marginTop: 2,
+        fontSize: 14,
+        color: "white"
+    },
+    privacyButton: {
+        marginTop: 2,
+        fontSize: 14,
+        color: "white"
+    },
+    termsAndPrivacy: {
+        textDecoration: "none"
+    },
+    circle: {
+        marginLeft: 5,
+        marginRight: 5,
+        fontSize:5,
+        marginBottom: 2
+    },
+    spaceBetween: {
+        width: 16
     }
   });
 
@@ -98,11 +126,27 @@ export default function Footer() {
                 <Grid>
                     <FontAwesomeIcon icon={faCopyright}/>
                     <span className={classes.copyrightText}>Big Bud Bookkeeping 2020</span>
-                    <FontAwesomeIcon icon={faCat}  className={classes.cat}/>
+                    {<FontAwesomeIcon icon={faCat}className={classes.catIcon}/>}
+                </Grid>
+                <Grid container direction="row" justify="center" alignItems="center">
+                    <Grid item>
+                        <Link to="/terms" className={classes.termsAndPrivacy}>
+                            <span className={classes.termsButton}>Terms</span>
+                        </Link>
+                    </Grid>
+                    <Grid item>
+                        <FontAwesomeIcon icon={faCircle} className={classes.circle}/>
+                    </Grid>
+                    <Grid item>
+                        <Link to="/privacy" className={classes.termsAndPrivacy}>
+                            <span className={classes.privacyButton}>Privacy</span>
+                        </Link>
+                    </Grid>
                 </Grid>
                 <Grid className={classes.devCredit} aria-label="Visit the site developer's LinkedIn">
-                    Site Built by <a href="https://www.linkedin.com/in/brett-fox-00658a19b/" className={classes.devCreditAnchor}>Fox Digital</a>
+                    Developed with <FontAwesomeIcon icon={faHeart}  className={classes.heartIcon}/> by <a href="https://www.linkedin.com/in/brett-fox-00658a19b/" className={classes.devCreditAnchor}>Brett Fox</a>
                 </Grid>
+                
             </Grid>
         </Grid>
     )}
