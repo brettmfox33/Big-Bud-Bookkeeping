@@ -9,9 +9,11 @@ import { Link, useLocation } from "react-router-dom";
 const HeaderButton = withStyles ({
     root: {
         fontFamily: fonts.textFont,
+        color: colors.mainPurple,
         '&:hover': {
             backgroundColor: "white",
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            fontSize: 15
         }
     }
 })(Button);
@@ -56,18 +58,17 @@ const useStyles = makeStyles({
         zIndex: 9999
     },
     headerLinks: {
-        marginRight: 200,
+        marginRight: 100,
         display: "flex"
     },
     mainLogo: {
-        marginLeft: 250,
+        marginLeft: 100,
         display: "flex"
     },
     scheduleAppointment: {
         marginLeft: 25
     },
     selectedScheduleAppointment: {
-        marginLeft: 25,
         backgroundColor: colors.mainPurple,
         color: 'white'
     },
@@ -76,9 +77,10 @@ const useStyles = makeStyles({
         alignItems: "center",
         textDecoration: "none"
     },
-    link: {
+    aboutLink: {
         display: "flex",
-        textDecoration: "none"
+        textDecoration: "none",
+        marginLeft: 25
     },
     servicesLink: {
         display: "flex",
@@ -107,15 +109,15 @@ export default function ClearHeader() {
                 </LogoButton>
             </Link>
             <div className={classes.headerLinks}>
-                <Link to="/about" className={classes.link}>
-                    <HeaderButton aria-label="Visit About Us Page" disableFocusRipple={true} disableRipple={true} className={location.pathname === '/about' ? classes.selectedLink : null}> About Us </HeaderButton>
-                </Link>
-                <Link to="/services" className={classes.servicesLink}>
-                    <HeaderButton aria-label="Visit Services Page" disableFocusRipple={true} disableRipple={true}  className={location.pathname === '/services' ? classes.selectedLink : null}> Services </HeaderButton>
-                </Link>
                 <Link to="/contact" className={classes.appointmentButtonContainer}>
                     <AppointmentButton aria-label="Visit Contact Us Page"  variant="outlined" className={location.pathname === '/contact' ? classes.selectedScheduleAppointment : classes.scheduleAppointment}> Schedule Appointment </AppointmentButton>
                 </Link>
+                <Link to="/about" className={classes.aboutLink}>
+                    <HeaderButton aria-label="Visit About Us Page" disableFocusRipple={true} disableRipple={true} className={location.pathname === '/about' ? classes.selectedLink : null}> About Us </HeaderButton>
+                </Link>
+                {/* <Link to="/services" className={classes.servicesLink}>
+                    <HeaderButton aria-label="Visit Services Page" disableFocusRipple={true} disableRipple={true}  className={location.pathname === '/services' ? classes.selectedLink : null}> Services </HeaderButton>
+                </Link> */}
             </div>
         </div>
     )

@@ -38,7 +38,7 @@ const useStyles = makeStyles({
         color: 'white',
         fontSize: 30,
         textAlign: "center",
-        marginBottom: 15
+        // marginBottom: 15
     },
     button: {
         textDecoration: 'none'
@@ -54,11 +54,11 @@ export default function ServiceBanner() {
             <Grid item sm={4} className={classes.text}>
                 Bring your business back into focus with our step by step process.
             </Grid>
-            <Grid item>
+            {/* <Grid item>
                 <Link to="/services" className={classes.button}>
                     <BannerButton aria-label="Visit Services Page">Process Overview</BannerButton>
                 </Link>
-            </Grid>
+            </Grid> */}
         </Grid>
     )
 }

@@ -15,12 +15,12 @@ const AppointmentButton = withStyles({
         width: 215,
         padding: 0,
         fontSize: 15,
-        borderColor: 'white',
+        borderColor: colors.mainPurple,
+        backgroundColor: colors.mainPurple,
         color: 'white',
         '&:hover': {
-            backgroundColor: colors.mainPurple,
-            borderColor: colors.mainPurple,
-            color: "white"
+            backgroundColor: null,
+            borderColor: "white",
         }
     }
 })(Button);

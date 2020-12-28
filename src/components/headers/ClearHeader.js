@@ -19,23 +19,6 @@ const HeaderButton = withStyles ({
     }
 })(Button);
 
-const AppointmentButton = withStyles({
-    root: {
-        fontFamily: fonts.textFont,
-        borderRadius: 50,
-        height: 50,
-        width: 215,
-        padding: 0,
-        fontSize: 15,
-        color: "white",
-        borderColor: "white",
-        '&:hover': {
-            backgroundColor: colors.mainPurple,
-            borderColor: colors.mainPurple
-          }
-    }
-})(Button);
-
 const AppointmentButtonWhite = withStyles({
     root: {
         fontFamily: fonts.textFont,
@@ -67,11 +50,11 @@ const useStyles = makeStyles({
         zIndex: 9999
     },
     headerLinks: {
-        marginRight: 200,
+        marginRight: 100,
         display: "flex"
     },
     mainLogo: {
-        marginLeft: 250,
+        marginLeft: 100,
         display: "flex"
     },
     scheduleAppointment: {
@@ -116,6 +99,7 @@ const useStyles = makeStyles({
         color: colors.mainPurple
     },
     aboutButton: {
+        marginLeft: 25,
         color: colors.mainPurple
     },
   });
@@ -124,15 +108,15 @@ export default function ClearHeader() {
     const classes = useStyles();
     const classesWhite = useStylesWhite();
 
-    const [showWhiteHeader, setShowWhiteHeader] = useState(true);
+    const [showWhiteHeader, setShowWhiteHeader] = useState(false);
 
     const handleDocumentScroll = () => {
         const { scrollTop: currentScrollTop } = document.documentElement || document.body;
         if (currentScrollTop > 100) {
-            setShowWhiteHeader(false);
+            setShowWhiteHeader(true);
         }
         else {
-            setShowWhiteHeader(true);
+            setShowWhiteHeader(false);
         }
     }
 
@@ -146,27 +130,27 @@ export default function ClearHeader() {
       }, [handleDocumentScrollThrottled]);
 
     return (
-        <div className={showWhiteHeader ? classes.headerBottomMain : classesWhite.headerBottomMain}>
+        <div className={showWhiteHeader  ? classesWhite.headerBottomMain : classes.headerBottomMain}>
             <Link to="/" className={classes.mainLogo}>
                 <Button disableFocusRipple={true} disableRipple={true}>
-                    <img alt="Big Bud Bookkeeping Logo And Home Button" src={showWhiteHeader ? whiteLogo : logo} className={classes.image}></img>
+                    <img alt="Big Bud Bookkeeping Logo And Home Button" src={showWhiteHeader ? logo : whiteLogo} className={classes.image}></img>
                 </Button>
             </Link>
             <div className={classes.headerLinks}>
-                <Link to="/about" className={classes.link}>
-                    <HeaderButton aria-label="Visit About Us Page" disableFocusRipple={true} disableRipple={true} className={showWhiteHeader ?  classes.aboutButton : classesWhite.aboutButton}> About Us </HeaderButton>
-                </Link>
-                <Link to="/services" className={classes.link}>
-                    <HeaderButton aria-label="Visit Services Page" disableFocusRipple={true} disableRipple={true} className={showWhiteHeader ? classes.servicesButton : classesWhite.servicesButton}> Services </HeaderButton>
-                </Link>
                 <Link to="/contact" className={classes.link}>
-                {
-                    showWhiteHeader ?
-                        <AppointmentButton aria-label="Visit Contact Us Page" variant="outlined" className={classes.scheduleAppointment}> Schedule Appointment </AppointmentButton>
-                    :
-                        <AppointmentButtonWhite aria-label="Visit Contact Us Page" variant="outlined" className={classes.scheduleAppointment}> Schedule Appointment </AppointmentButtonWhite>
-                }
-                    </Link>
+                    {
+                        showWhiteHeader ?
+                            <AppointmentButtonWhite aria-label="Visit Contact Us Page" variant="outlined" className={classes.scheduleAppointment}> Schedule Appointment </AppointmentButtonWhite>
+                        :
+                            null   
+                    }
+                </Link>
+                <Link to="/about" className={classes.link}>
+                    <HeaderButton aria-label="Visit About Us Page" disableFocusRipple={true} disableRipple={true} className={showWhiteHeader ?  classesWhite.aboutButton : classes.aboutButton}> About Us </HeaderButton>
+                </Link>
+                {/* <Link to="/services" className={classes.link}>
+                    <HeaderButton aria-label="Visit Services Page" disableFocusRipple={true} disableRipple={true} className={showWhiteHeader ? classes.servicesButton : classesWhite.servicesButton}> Services </HeaderButton>
+                </Link> */}
             </div>
         </div>
     )

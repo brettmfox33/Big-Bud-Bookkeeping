@@ -24,7 +24,7 @@ const useStyles = makeStyles({
       height: 42,
       background: colors.mainPurple,
       color: "white",
-      paddingRight: 200,
+      paddingRight: 100,
       position: 'sticky',
       top: 0,
       zIndex: 9999

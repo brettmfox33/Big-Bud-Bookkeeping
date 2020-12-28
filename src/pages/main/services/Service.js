@@ -23,7 +23,7 @@ const useStyles = makeStyles({
     icon: {
         fontSize: 35,
         color: colors.mainPurple,
-        marginBottom: 10
+        marginBottom: 3
     },
     link: {
         textDecoration: "none"
@@ -38,11 +38,11 @@ export default function Service({title, text, icon}) {
             <Grid className={classes.icon}>
                 {icon}
             </Grid>
-            <Link to="/services" className={classes.link}>
+            {/* <Link to="/services" className={classes.link}> */}
                 <Grid className={classes.title}>
                     {title}
                 </Grid>
-            </Link>
+            {/* </Link> */}
             <Grid className={classes.text}>
                 {text}
             </Grid>

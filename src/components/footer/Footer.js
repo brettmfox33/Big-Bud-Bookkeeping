@@ -6,7 +6,6 @@ import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCopyright} from '@fortawesome/pro-light-svg-icons'
-import {faHeart} from '@fortawesome/pro-solid-svg-icons'
 import {faFacebookF} from '@fortawesome/free-brands-svg-icons'
 import {faLinkedinIn} from '@fortawesome/free-brands-svg-icons'
 import {faCat} from '@fortawesome/free-solid-svg-icons'
@@ -29,7 +28,7 @@ const useStyles = makeStyles({
         backgroundColor: colors.mainGreen,
         color: 'white',
         paddingTop: 40,
-        paddingBottom: 10
+        paddingBottom: 25
     },
     bottomInfo: {
         fontSize: 16,
@@ -60,11 +59,7 @@ const useStyles = makeStyles({
     },
     catIcon: {
         color: "white",
-        marginLeft: 5,
         marginBottom: 2
-    },
-    heartIcon: {
-        color: "white"
     },
     termsButton: {
         marginTop: 2,
@@ -126,7 +121,6 @@ export default function Footer() {
                 <Grid>
                     <FontAwesomeIcon icon={faCopyright}/>
                     <span className={classes.copyrightText}>Big Bud Bookkeeping 2020</span>
-                    {<FontAwesomeIcon icon={faCat}className={classes.catIcon}/>}
                 </Grid>
                 <Grid container direction="row" justify="center" alignItems="center">
                     <Grid item>
@@ -144,7 +138,7 @@ export default function Footer() {
                     </Grid>
                 </Grid>
                 <Grid className={classes.devCredit} aria-label="Visit the site developer's LinkedIn">
-                    Developed with <FontAwesomeIcon icon={faHeart}  className={classes.heartIcon}/> by <a href="https://www.linkedin.com/in/brett-fox-00658a19b/" className={classes.devCreditAnchor}>Brett Fox</a>
+                    Developed with {<FontAwesomeIcon icon={faCat}className={classes.catIcon}/>} by <a href="https://www.linkedin.com/in/brett-fox-00658a19b/" className={classes.devCreditAnchor}>Brett Fox</a>
                 </Grid>
                 
             </Grid>

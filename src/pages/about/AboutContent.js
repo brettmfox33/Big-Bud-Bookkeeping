@@ -13,7 +13,7 @@ const useStyles = makeStyles({
         marginTop: 50
     },
     motivationHeader: {
-        color: colors.mainPurple,
+        color: colors.softPurple,
         fontSize: 38,
         fontFamily: fonts.titleFont,
         fontWeight: 700
@@ -39,14 +39,14 @@ const useStyles = makeStyles({
         padding: 30
     },
     whyHeader: {
-        color: colors.mainPurple,
+        color: colors.softPurple,
         fontSize: 38,
         fontFamily: fonts.titleFont,
         fontWeight: 700,
         textAlign: "right"
     },
     mobileWhyHeader: {
-        color: colors.mainPurple,
+        color: colors.softPurple,
         fontSize: 38,
         fontFamily: fonts.titleFont,
         fontWeight: 700,
@@ -74,14 +74,14 @@ const useStyles = makeStyles({
         padding: 30
     },
     guaranteeHeader: {
-        color: colors.mainPurple,
+        color: colors.softPurple,
         fontSize: 38,
         fontFamily: fonts.titleFont,
         fontWeight: 700,
         textAlign: "right"
     },
     mobileGuaranteeHeader: {
-        color: colors.mainPurple,
+        color: colors.softPurple,
         fontSize: 38,
         fontFamily: fonts.titleFont,
         fontWeight: 700,
