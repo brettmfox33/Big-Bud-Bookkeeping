@@ -57,6 +57,11 @@ export default function MobileDrawer() {
                         <ListItemText aria-label="Visit Contact Us page" primary="Contact" classes={location.pathname === '/contact' ? {primary: classes.listItemTextSelected} : {primary: classes.listItemText}}></ListItemText>
                     </ListItem>
                 </Link>
+                <Link to="/blog" className={classes.link}>
+                    <ListItem button key="Blog">
+                        <ListItemText aria-label="Read our blog" primary="Blog" classes={location.pathname === '/blog' ? {primary: classes.listItemTextSelected} : {primary: classes.listItemText}}></ListItemText>
+                    </ListItem>
+                </Link>
             </List>            
         </div>
     )

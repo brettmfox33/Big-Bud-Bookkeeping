@@ -10,6 +10,8 @@ import ServicesMain from './pages/services/ServiceMain';
 import ScrollToTop from './components/ScrollToTop';
 import TermsMain from './pages/terms/TermsMain';
 import PrivacyMain from './pages/privacy/PrivacyMain';
+import BlogMain from './pages/blog/BlogMain';
+import BlogPost from './pages/blog/BlogPost';
 
 function App() {
 
@@ -32,6 +34,12 @@ function App() {
                     </Route>
                     <Route path="/privacy">
                         <PrivacyMain />
+                    </Route>
+                    <Route path="/blog">
+                        <BlogMain />
+                    </Route>
+                    <Route exact path="/blog_post">
+                        <BlogPost />
                     </Route>
                     <Route path="/">
                         <MainPage />

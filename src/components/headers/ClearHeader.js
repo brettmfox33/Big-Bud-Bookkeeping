@@ -67,6 +67,10 @@ const useStyles = makeStyles({
     aboutButton: {
         color: "white"
     },
+    blogButton: {
+        color: "white",
+        marginLeft: 25
+    },
     link: {
         display: "flex",
         textDecoration: "none",
@@ -99,6 +103,10 @@ const useStyles = makeStyles({
         color: colors.mainPurple
     },
     aboutButton: {
+        marginLeft: 25,
+        color: colors.mainPurple
+    },
+    blogButton: {
         marginLeft: 25,
         color: colors.mainPurple
     },
@@ -147,6 +155,9 @@ export default function ClearHeader() {
                 </Link>
                 <Link to="/about" className={classes.link}>
                     <HeaderButton aria-label="Visit About Us Page" disableFocusRipple={true} disableRipple={true} className={showWhiteHeader ?  classesWhite.aboutButton : classes.aboutButton}> About Us </HeaderButton>
+                </Link>
+                <Link to="/blog" className={classes.link}>
+                    <HeaderButton aria-label="Read the blog" disableFocusRipple={true} disableRipple={true} className={showWhiteHeader ?  classesWhite.blogButton : classes.blogButton}> Blog </HeaderButton>
                 </Link>
                 {/* <Link to="/services" className={classes.link}>
                     <HeaderButton aria-label="Visit Services Page" disableFocusRipple={true} disableRipple={true} className={showWhiteHeader ? classes.servicesButton : classesWhite.servicesButton}> Services </HeaderButton>

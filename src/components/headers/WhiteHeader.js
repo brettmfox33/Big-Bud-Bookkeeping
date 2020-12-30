@@ -82,6 +82,11 @@ const useStyles = makeStyles({
         textDecoration: "none",
         marginLeft: 25
     },
+    blogLink: {
+        display: "flex",
+        textDecoration: "none",
+        marginLeft: 25
+    },
     servicesLink: {
         display: "flex",
         textDecoration: "none",
@@ -114,6 +119,9 @@ export default function ClearHeader() {
                 </Link>
                 <Link to="/about" className={classes.aboutLink}>
                     <HeaderButton aria-label="Visit About Us Page" disableFocusRipple={true} disableRipple={true} className={location.pathname === '/about' ? classes.selectedLink : null}> About Us </HeaderButton>
+                </Link>
+                <Link to="/blog" className={classes.blogLink}>
+                    <HeaderButton aria-label="Read our blog" disableFocusRipple={true} disableRipple={true} className={location.pathname === '/blog' ? classes.selectedLink : null}> Blog </HeaderButton>
                 </Link>
                 {/* <Link to="/services" className={classes.servicesLink}>
                     <HeaderButton aria-label="Visit Services Page" disableFocusRipple={true} disableRipple={true}  className={location.pathname === '/services' ? classes.selectedLink : null}> Services </HeaderButton>
