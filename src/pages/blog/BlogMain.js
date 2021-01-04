@@ -1,53 +1,96 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { Fragment, useState } from "react"
-import { Button, Grid, Input, makeStyles, TextField, useMediaQuery, withStyles } from "@material-ui/core";
+import { Fragment, useEffect, useState } from "react"
+import { Button, FormControl, Grid, Input, InputBase, InputLabel, makeStyles, MenuItem, Select, TextField, useMediaQuery, withStyles } from "@material-ui/core";
 import InfoHeader from "../../components/headers/InfoHeader";
 import WhiteHeader from "../../components/headers/WhiteHeader";
-import SmallBanner from '../../components/SmallBanner';
 import MobileHeader from '../../components/headers/MobileHeader';
-import image from '../../images/card1.png'
 import BlogCard from './BlogCard';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
-import BlogFilterButton from './BlogFilterButton';
+import {useDispatch, useSelector} from "react-redux";
+import { actionCreators } from '../../redux/actionCreators';
+import BlogSelect from './BlogSelect';
+import BlogText from './BlogText';
+
 
 const useStyles = makeStyles({
     gridContainer: {
         marginTop: 10,
         marginBottom: 50
     },
+    blogHeader: {
+        color: colors.mainPurple,
+        fontFamily: fonts.titleFont,
+        fontSize: 50,
+        marginTop: 30
+    },
+    blogSubHeader: {
+        color: colors.softPurple,
+        fontFamily: fonts.titleFont,
+        fontSize: 25
+    },
     buttonContainer: {
-        marginTop: 10,
-        marginBottom: 5
     },
     buttonTitle: {
-        marginTop: 50,
         fontFamily: fonts.titleFont,
         color: colors.mainPurple,
         fontSize: 20,
-        marginRight: 72
+    },
+    xLogo: {
+        width: 100
     },
     button: {
-
+        backgroundColor: colors.softPurple,
+        color: "white",
+        marginRight: 72,
+        width: 100,
+        '&:hover': {
+            backgroundColor: colors.mainPurple
+        }
     }
 });
 
-const ColorTextField = withStyles((theme) => ({
-root: {
-  width: 200,
-  marginRight: 72
-}
-}))(TextField);
+const tags = [
+    'Workflows',
+    'Taxes',
+    'Inventory',
+    'Payroll',
+    'Holiday',
+    'Current Events',
+    'Business Management',
+    'Compliance',
+    'Bookkeeping',
+  ];
 
 export default function BlogMain() { 
     const classes = useStyles();
+    const dispatch = useDispatch();
     const largeScreen = useMediaQuery('(min-width:1000px)', {defaultMatches: true});
+    const blogPosts = useSelector(state => state.blogPosts)
+    
+    const [selectedTags, setSelectedTags] = useState([])   
+    const [filterText, setFilterText] = useState("")
+
+    useEffect(() => {
+        dispatch(actionCreators.getBlogPosts())
+      }, [dispatch]);
+
+    const getImage = (image) => {
+        if (image.formats.small) {
+            return image.formats.small.url
+        }
+        return image.formats.thumbnail.url
+    }
+
+    const filterPosts = () => {
+        dispatch(actionCreators.getBlogPostsFiltered(selectedTags, filterText))
+    }
 
     return(
         <Fragment>
             {
-                largeScreen 
+                largeScreen
                 ?
                     <Fragment>
                         <InfoHeader />
@@ -58,69 +101,54 @@ export default function BlogMain() {
                         <MobileHeader />
                     </div>
             }
-            {/* <SmallBanner
-                title="Blog"
-                text="Get the latest info from my dope ass blog."
-            /> */}
             <Grid container direction="column">
+                {/* HEADER */}
+                <Grid className={classes.blogHeader} container direction="row" justify="center">
+                    Big Bud Blog
+                </Grid>
+                <Grid container direction="row" justify="center">
+                    <img className={classes.xLogo} alt="XLogo" src={require('../../images/XLogo.png')}/>
+                </Grid>
+                <Grid className={classes.blogSubHeader} container direction="row" justify="center">
+                    Nuggets Of Wisdom
+                </Grid>
+
                 {/* FILTERS  */}
-                {/* <Grid container direction="row" justify="flex-end">
-                    <Grid item xs={4} container direction="column" alignItems="flex-end">
-                        <Grid className={classes.buttonTitle}>
-                            Filter Blogs
-                        </Grid>
-                        <Grid className={classes.buttonContainer} container direction="row" justify="flex-end">
-                            <BlogFilterButton value="Finance" />
-                            <BlogFilterButton value="Bookkeeping" />
-                            <BlogFilterButton value="Random" />
-                            <BlogFilterButton value="Accounting" />
-                        </Grid>
-                        <Grid className={classes.buttonContainer}>
-                            <ColorTextField  size="small" label="Filter For Text" variant="outlined" />
-                        </Grid>
-                    </Grid>
-                </Grid> */}
+                <Grid container direction="row" justify="flex-end">
+                    <BlogSelect 
+                        setSelectedTags={setSelectedTags}
+                        selectedTags={selectedTags}
+                        tags={tags}
+                    />
+                    <BlogText 
+                        setFilterText={setFilterText}
+                        filterText={filterText}
+                    />
+                    <Button 
+                        className={classes.button}
+                        onClick={filterPosts}
+                    >
+                        Filter
+                    </Button>
+                </Grid>
 
                 {/* POSTS */}
-                <Grid container direction="row" justify="space-evenly" className={classes.gridContainer}>
-                    <BlogCard 
-                        title={"My Blog Post!"}
-                        subheader={"September 14, 2016"}
-                        content={"This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."}
-                        image={image}
-                    />
-                    <BlogCard 
-                        title={"My Blog Post!"}
-                        subheader={"September 14, 2016"}
-                        content={"This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."}
-                        image={image}
-                    />
-                    <BlogCard 
-                        title={"My Blog Post!"}
-                        subheader={"September 14, 2016"}
-                        content={"This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."}
-                        image={image}
-                    />
-                </Grid>
-                <Grid container direction="row" justify="space-evenly" className={classes.gridContainer}>
-                    <BlogCard 
-                        title={"My Blog Post!"}
-                        subheader={"September 14, 2016"}
-                        content={"This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."}
-                        image={image}
-                    />
-                    <BlogCard 
-                        title={"My Blog Post!"}
-                        subheader={"September 14, 2016"}
-                        content={"This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."}
-                        image={image}
-                    />
-                    <BlogCard 
-                        title={"My Blog Post!"}
-                        subheader={"September 14, 2016"}
-                        content={"This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."}
-                        image={image}
-                    />
+                <Grid container direction="row"  justify="space-evenly" className={classes.gridContainer}>
+                    {
+                        blogPosts.map(post => (
+                            <BlogCard 
+                                key={post.id}
+                                title={post.Title}
+                                content={post.Preview_Text}
+                                image={getImage(post.Image)}
+                                subheader={post.Created}
+                                id={post.id}
+                                tag1={post.Tag1}
+                                tag2={post.Tag2}
+                                tag3={post.Tag3}
+                            />
+                        ))
+                    }
                 </Grid>
             </Grid>
         </Fragment>

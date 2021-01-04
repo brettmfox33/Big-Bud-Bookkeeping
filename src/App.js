@@ -35,11 +35,11 @@ function App() {
                     <Route path="/privacy">
                         <PrivacyMain />
                     </Route>
+                    <Route path="/blog/:id">
+                        <BlogPost />
+                    </Route>
                     <Route path="/blog">
                         <BlogMain />
-                    </Route>
-                    <Route exact path="/blog_post">
-                        <BlogPost />
                     </Route>
                     <Route path="/">
                         <MainPage />
