@@ -3,15 +3,14 @@ import { jsx } from '@emotion/core';
 import { Divider, Grid, makeStyles, useMediaQuery } from "@material-ui/core";
 import { Fragment, useEffect } from "react"
 import WhiteHeader from "../../components/headers/WhiteHeader";
-import SmallBanner from '../../components/SmallBanner';
 import MobileHeader from '../../components/headers/MobileHeader';
 import InfoHeader from "../../components/headers/InfoHeader";
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
-import BlogCard from './BlogCard';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionCreators } from '../../redux/actionCreators';
+import BlogCardSmall from './BlogCardSmall';
 const ReactMarkdown = require('react-markdown')
 
 const useStyles = makeStyles({
@@ -150,7 +149,7 @@ export default function BlogPost() {
                                     </Grid>
                                     <Grid container direction="row" justify="space-evenly">
                                         {similarBlogPosts.slice(0,3).map(post => (
-                                            <BlogCard 
+                                            <BlogCardSmall
                                                 key={post.id}
                                                 title={post.Title}
                                                 subheader={post.Created}

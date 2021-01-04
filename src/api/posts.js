@@ -7,7 +7,7 @@ export function getBlogs() {
 
 export function getBlog(id) {
     return axios.get(`http://localhost:1337/blog-posts/${id}`);
-  }
+}
 
 export function getBlogsFiltered(tags, text) {
     const newTags = tags.map(tag => {
@@ -64,3 +64,7 @@ export function getSimilarBlogs(tag, title) {
     })
     return axios.get(`http://localhost:1337/blog-posts?_sort=Created:DESC&${query}`);
 }
+
+export function getHighlightedBlogs() {
+    return axios.get(`http://localhost:1337/blog-posts?Highlight=true`);
+  }

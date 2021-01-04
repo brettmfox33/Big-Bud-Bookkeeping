@@ -1,6 +1,6 @@
 import { actionCreators } from "../actionCreators";
 import {call, put, takeEvery} from "@redux-saga/core/effects";
-import {getBlogs, getBlog, getBlogsFiltered, getSimilarBlogs} from "../../api/posts";
+import {getBlogs, getBlog, getBlogsFiltered, getSimilarBlogs, getHighlightedBlogs} from "../../api/posts";
 
 // BLOG POSTS
 export function* watchGetBlogPosts() {
@@ -40,4 +40,14 @@ export function* watchGetSimilarBlogPosts() {
 function* getSimilarBlogPosts(action) {
     const response = yield call(getSimilarBlogs, action.payload.tag, action.payload.title);
     yield put(actionCreators.getSimilarBlogPostsSuccess(response.data));
+}
+
+// HIGHLIGHTED BLOG POSTS
+export function* watchGetHighlightedBlogPosts() {
+    yield takeEvery(actionCreators.getHighlightedBlogPosts, getHighlightedBlogPosts);
+}
+
+function* getHighlightedBlogPosts(action) {
+    const response = yield call(getHighlightedBlogs);
+    yield put(actionCreators.getHighlightedBlogPostsSuccess(response.data));
 }

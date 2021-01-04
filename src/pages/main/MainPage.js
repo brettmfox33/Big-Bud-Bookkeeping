@@ -9,6 +9,7 @@ import ServiceBanner from './services/ServiceBanner'
 import Banner from './Banner';
 import Contact from './Contact';
 import ClearHeader from '../../components/headers/ClearHeader';
+import Blogs from './Blogs';
 
 export default function MainPage() {
     const largeScreen = useMediaQuery('(min-width:1000px)', {defaultMatches: true});
@@ -31,6 +32,7 @@ export default function MainPage() {
             <Services />
             <ServiceBanner />
             <Contact />
+            <Blogs />
         </Grid>
 
     )

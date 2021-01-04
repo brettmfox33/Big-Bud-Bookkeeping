@@ -4,7 +4,8 @@ import { actionCreators } from "./actionCreators";
 const initialState = {
     blogPosts: [],
     blogPost: null,
-    similarBlogPosts: []
+    similarBlogPosts: [],
+    highlightedBlogPosts: []
 }
 
 export default handleActions(
@@ -36,7 +37,14 @@ export default handleActions(
         [actionCreators.getSimilarBlogPostsSuccess]: (state, action) => ({
             ...state,
             similarBlogPosts: action.payload.data
-        })
+        }),
+        [actionCreators.getHighlightedBlogPosts]: state => ({
+            ...state
+        }),
+        [actionCreators.getHighlightedBlogPostsSuccess]: (state, action) => ({
+            ...state,
+            highlightedBlogPosts: action.payload.data 
+        }),
     },
     initialState
   );

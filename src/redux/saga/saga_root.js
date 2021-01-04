@@ -1,7 +1,8 @@
 
 import { all } from "redux-saga/effects";
 import { watchGetBlogPosts, watchGetBlogPost, 
-    watchGetBlogPostsFiltered, watchGetSimilarBlogPosts } from "./posts";
+    watchGetBlogPostsFiltered, watchGetSimilarBlogPosts, watchGetHighlightedBlogPosts
+ } from "./posts";
 
 
 export default function* rootSaga() {
@@ -9,6 +10,7 @@ export default function* rootSaga() {
     watchGetBlogPosts(),
     watchGetBlogPost(),
     watchGetBlogPostsFiltered(),
-    watchGetSimilarBlogPosts()
+    watchGetSimilarBlogPosts(),
+    watchGetHighlightedBlogPosts()
   ]);
 }
