@@ -121,7 +121,7 @@ export default function ClearHeader() {
                     <HeaderButton aria-label="Visit About Us Page" disableFocusRipple={true} disableRipple={true} className={location.pathname === '/about' ? classes.selectedLink : null}> About Us </HeaderButton>
                 </Link>
                 <Link to="/blog" className={classes.blogLink}>
-                    <HeaderButton aria-label="Read our blog" disableFocusRipple={true} disableRipple={true} className={location.pathname === '/blog' ? classes.selectedLink : null}> Blog </HeaderButton>
+                    <HeaderButton aria-label="Read our blog" disableFocusRipple={true} disableRipple={true} className={location.pathname === '/blog' || location.pathname.startsWith('/blog/') ? classes.selectedLink : null}> Blog </HeaderButton>
                 </Link>
                 {/* <Link to="/services" className={classes.servicesLink}>
                     <HeaderButton aria-label="Visit Services Page" disableFocusRipple={true} disableRipple={true}  className={location.pathname === '/services' ? classes.selectedLink : null}> Services </HeaderButton>
