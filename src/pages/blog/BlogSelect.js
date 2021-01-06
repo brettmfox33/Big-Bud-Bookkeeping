@@ -1,8 +1,23 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { useState } from "react"
 import { FormControl, Grid, InputBase, makeStyles, MenuItem, Select, withStyles} from "@material-ui/core";
 import colors from '../../styles/colors';
+
+const ColorInput = withStyles((theme) => ({
+    input: {
+        borderRadius: 4,
+        color: '#737373',
+        position: 'relative',
+        border: '1px solid #c0c0c0',
+        fontSize: 16,
+        padding: '10px 26px 10px 12px',
+        '&:focus': {
+            borderRadius: 4,
+            backgroundColor: '#fafafa',
+            border: `2px solid ${colors.mainPurple}`
+        },
+    },
+}))(InputBase);
 
 const useStyles = makeStyles({
     selectFormControl: {
@@ -10,34 +25,21 @@ const useStyles = makeStyles({
         width: 150,
         maxWidth: 200,
         height: 40
+    },
+    container: {
+        marginBottom: 10
     }
 });
-
-  const ColorInput = withStyles((theme) => ({
-    input: {
-      borderRadius: 4,
-      color: '#737373',
-      position: 'relative',
-      border: '1px solid #c0c0c0',
-      fontSize: 16,
-      padding: '10px 26px 10px 12px',
-      '&:focus': {
-        borderRadius: 4,
-        backgroundColor: '#fafafa',
-        border: `2px solid ${colors.mainPurple}`
-      },
-    },
-  }))(InputBase);
 
 export default function BlogSelect({selectedTags, setSelectedTags, tags}) {
     const classes = useStyles();
 
     const handleChange = (event) => {
         setSelectedTags(event.target.value);
-      };
+    };
 
     return (
-        <Grid>
+        <Grid className={classes.container}>
             <FormControl className={classes.selectFormControl}>
                 <Select
                     multiple

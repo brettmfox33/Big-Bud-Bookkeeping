@@ -12,6 +12,7 @@ import {useDispatch, useSelector} from "react-redux";
 import { actionCreators } from '../../redux/actionCreators';
 import BlogSelect from './BlogSelect';
 import BlogText from './BlogText';
+import BlogCardSmall from './BlogCardSmall';
 
 
 const useStyles = makeStyles({
@@ -24,6 +25,12 @@ const useStyles = makeStyles({
         fontFamily: fonts.titleFont,
         fontSize: 50,
         marginTop: 30
+    },
+    mobileBlogHeader: {
+        color: colors.mainPurple,
+        fontFamily: fonts.titleFont,
+        fontSize: 50,
+        marginTop: 80
     },
     blogSubHeader: {
         color: colors.softPurple,
@@ -47,8 +54,25 @@ const useStyles = makeStyles({
         width: 100,
         '&:hover': {
             backgroundColor: colors.mainPurple
-        }
+        },
+        marginBottom: 10
     }
+});
+
+const useStylesMobile = makeStyles({
+   blogHeader: {
+        color: colors.mainPurple,
+        fontFamily: fonts.titleFont,
+        fontSize: 50,
+        marginTop: 70
+    },
+    blogSubHeader: {
+        color: colors.softPurple,
+        fontFamily: fonts.titleFont,
+        fontSize: 25,
+        marginBottom: 20,
+        marginTop: 10
+    },
 });
 
 const tags = [
@@ -65,6 +89,7 @@ const tags = [
 
 export default function BlogMain() { 
     const classes = useStyles();
+    const mobileClasses = useStylesMobile();
     const dispatch = useDispatch();
     const largeScreen = useMediaQuery('(min-width:1000px)', {defaultMatches: true});
     const blogPosts = useSelector(state => state.blogPosts)
@@ -103,18 +128,18 @@ export default function BlogMain() {
             }
             <Grid container direction="column">
                 {/* HEADER */}
-                <Grid className={classes.blogHeader} container direction="row" justify="center">
+                <Grid className={largeScreen ? classes.blogHeader : mobileClasses.blogHeader} container direction="row" justify="center">
                     Big Bud Blog
                 </Grid>
                 <Grid container direction="row" justify="center">
                     <img className={classes.xLogo} alt="XLogo" src={require('../../images/XLogo.png')}/>
                 </Grid>
-                <Grid className={classes.blogSubHeader} container direction="row" justify="center">
+                <Grid className={largeScreen ? classes.blogSubHeader : mobileClasses.blogSubHeader} container direction="row" justify="center">
                     Nuggets Of Wisdom
                 </Grid>
 
                 {/* FILTERS  */}
-                <Grid container direction="row" justify="flex-end">
+                <Grid container direction={largeScreen ? "row" : "column"} justify="flex-end" alignItems={largeScreen ? null : "flex-end"}>
                     <BlogSelect 
                         setSelectedTags={setSelectedTags}
                         selectedTags={selectedTags}
@@ -133,20 +158,37 @@ export default function BlogMain() {
                 </Grid>
 
                 {/* POSTS */}
-                <Grid container direction="row"  justify="space-evenly" className={classes.gridContainer}>
+                <Grid container direction={largeScreen ? "row" : "column"}  alignItems={largeScreen ? null : "center"} justify="space-evenly" className={classes.gridContainer}>
                     {
                         blogPosts.map(post => (
-                            <BlogCard 
-                                key={post.id}
-                                title={post.Title}
-                                content={post.Preview_Text}
-                                image={getImage(post.Image)}
-                                subheader={post.Created}
-                                id={post.id}
-                                tag1={post.Tag1}
-                                tag2={post.Tag2}
-                                tag3={post.Tag3}
-                            />
+                            <Grid xs={largeScreen ? null : 10}>
+                             {
+                                largeScreen 
+                                    ? <BlogCard 
+                                        key={post.id}
+                                        title={post.Title}
+                                        content={post.Preview_Text}
+                                        image={getImage(post.Image)}
+                                        subheader={post.Created}
+                                        id={post.id}
+                                        tag1={post.Tag1}
+                                        tag2={post.Tag2}
+                                        tag3={post.Tag3}
+                                    />
+                                    :
+                                    <BlogCardSmall
+                                        key={post.id}
+                                        title={post.Title}
+                                        content={post.Preview_Text}
+                                        image={getImage(post.Image)}
+                                        subheader={post.Created}
+                                        id={post.id}
+                                        tag1={post.Tag1}
+                                        tag2={post.Tag2}
+                                        tag3={post.Tag3}
+                                    />
+                                 }
+                              </Grid>
                         ))
                     }
                 </Grid>

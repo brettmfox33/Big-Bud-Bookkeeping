@@ -73,9 +73,20 @@ const useStyles = makeStyles({
     }
 });
 
+const useStylesMobile = makeStyles({
+    postContainer: {
+        marginTop: 80,
+        marginBottom: 70
+    },
+    postImage: {
+        width: 300,
+    }
+});
+
 export default function BlogPost() {
     const dispatch = useDispatch();
     const classes = useStyles();
+    const mobileClasses = useStylesMobile();
     const largeScreen = useMediaQuery('(min-width:1000px)', {defaultMatches: true});
     const { id } = useParams();
     const blogPost = useSelector(state => state.blogPost);
@@ -115,8 +126,8 @@ export default function BlogPost() {
             {
                 blogPost &&
                 <Fragment>
-                    <Grid className={classes.postContainer} container direction="row" justify="center">
-                        <Grid item xs={7} container direction="column" alignItems="center">
+                    <Grid className={largeScreen ? classes.postContainer : mobileClasses.postContainer} container direction="row" justify="center">
+                        <Grid item xs={10} sm={7} container direction="column" alignItems="center">
                             <Grid className={classes.postTitle}>
                                 {blogPost.Title}
                             </Grid>
@@ -129,8 +140,8 @@ export default function BlogPost() {
                             <Grid>
                             </Grid>
                             <Grid className={classes.postContent}> 
-                                <div className={classes.postContentText}>
-                                    <img className={classes.postImage} alt="Post" src={`http://localhost:1337${getImage(blogPost.Image)}`}></img>
+                                <div>
+                                    <img className={largeScreen ? classes.postImage : mobileClasses.postImage} alt="Post" src={`http://localhost:1337${getImage(blogPost.Image)}`}></img>
                                     <ReactMarkdown children={blogPost.Content} />
                                 </div>
                             </Grid>
@@ -147,7 +158,7 @@ export default function BlogPost() {
                                     <Grid className={classes.divider}>
                                     <Divider />
                                     </Grid>
-                                    <Grid container direction="row" justify="space-evenly">
+                                    <Grid container xs={10} direction={largeScreen ? "row" : "column"} justify="space-evenly">
                                         {similarBlogPosts.slice(0,3).map(post => (
                                             <BlogCardSmall
                                                 key={post.id}

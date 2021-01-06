@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core';
 import { faLongArrowRight } from '@fortawesome/pro-light-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Grid, makeStyles } from '@material-ui/core';
+import { Grid, makeStyles, useMediaQuery } from '@material-ui/core';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -43,6 +43,7 @@ export default function Blogs() {
     const classes = useStyles();
     const dispatch = useDispatch();
     const highlightedBlogPosts = useSelector(state => state.highlightedBlogPosts)
+    const largeScreen = useMediaQuery('(min-width:1000px)', {defaultMatches: true});
 
     useEffect(() => {
         dispatch(actionCreators.getHighlightedBlogPosts())
@@ -57,7 +58,7 @@ export default function Blogs() {
 
     return (
         <Grid className={classes.blogContainer} container direction="column" alignItems="center">
-            <Grid item xs={3}>
+            <Grid item xs={10} sm={3}>
                 <Grid className={classes.blogTitle}>
                     Blog
                 </Grid>
@@ -77,12 +78,12 @@ export default function Blogs() {
                     </Grid>
                 </Grid>
             </Grid>
-             <Grid container sm={8} item direction="row" justify="space-between">
+             <Grid container xs={12} sm={8}item direction="row" justify={largeScreen ? "space-between" : "center"}>
              {
                 highlightedBlogPosts &&
                 highlightedBlogPosts.map(post => {
                     return (
-                            <Grid item xs={3}>
+                            <Grid item xs={10} sm={3}>
                                 <BlogCardSmall
                                     key={post.id}
                                     title={post.Title}
