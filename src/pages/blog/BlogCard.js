@@ -74,7 +74,7 @@ export default function BlogCard({title, subheader, content, image, id, tag1, ta
             />
             <CardMedia
                 className={classes.cardMedia}
-                image={`https://bigbudbookkeeping-cms.appspot.com${image}`}
+                image={image}
             />
             <CardContent className={classes.cardContent}>
                 {content}
