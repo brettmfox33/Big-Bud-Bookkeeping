@@ -9,6 +9,7 @@ import BlogTag from './BlogTag';
 const useStyles = makeStyles((theme) => ({
     card: {
         maxWidth: 500,
+        minWidth: 500,
         height: 500,
         marginBottom: 50
     },

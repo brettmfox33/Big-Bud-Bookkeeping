@@ -78,24 +78,23 @@ export default function Blogs() {
                     </Grid>
                 </Grid>
             </Grid>
-             <Grid container xs={12} sm={8}item direction="row" justify={largeScreen ? "space-between" : "center"}>
+             <Grid container xs={12} sm={8}item direction="row" justify={largeScreen ? "space-evenly" : "center"}>
              {
                 highlightedBlogPosts &&
                 highlightedBlogPosts.map(post => {
                     return (
-                            <Grid item xs={10} sm={3}>
-                                <BlogCardSmall
-                                    key={post.id}
-                                    title={post.Title}
-                                    content={post.Preview_Text}
-                                    image={getImage(post.Image)}
-                                    subheader={post.Created}
-                                    id={post.id}
-                                    tag1={post.Tag1}
-                                    tag2={post.Tag2}
-                                    tag3={post.Tag3}
-                                />
-                            </Grid>
+                        <Grid item xs={10} sm={3} key={post.id}>
+                            <BlogCardSmall
+                                title={post.Title}
+                                content={post.Preview_Text}
+                                image={getImage(post.Image)}
+                                subheader={post.Created}
+                                id={post.id}
+                                tag1={post.Tag1}
+                                tag2={post.Tag2}
+                                tag3={post.Tag3}
+                            />
+                        </Grid>
                     )
                 })
             }
