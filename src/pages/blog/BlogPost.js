@@ -141,7 +141,7 @@ export default function BlogPost() {
                             </Grid>
                             <Grid className={classes.postContent}> 
                                 <div>
-                                    <img className={largeScreen ? classes.postImage : mobileClasses.postImage} alt="Post" src={`http://localhost:1337${getImage(blogPost.Image)}`}></img>
+                                    <img className={largeScreen ? classes.postImage : mobileClasses.postImage} alt="Post" src={`https://bigbudbookkeeping-cms.appspot.com${getImage(blogPost.Image)}`}></img>
                                     <ReactMarkdown children={blogPost.Content} />
                                 </div>
                             </Grid>

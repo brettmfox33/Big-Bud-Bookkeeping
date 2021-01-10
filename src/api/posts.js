@@ -2,11 +2,11 @@ import axios from 'axios';
 import { stringify } from 'qs';
 
 export function getBlogs() {
-  return axios.get("http://localhost:1337/blog-posts/?_sort=Created:DESC");
+  return axios.get("https://bigbudbookkeeping-cms.appspot.com/blog-posts/?_sort=Created:DESC");
 }
 
 export function getBlog(id) {
-    return axios.get(`http://localhost:1337/blog-posts/${id}`);
+    return axios.get(`https://bigbudbookkeeping-cms.appspot.com/blog-posts/${id}`);
 }
 
 export function getBlogsFiltered(tags, text) {
@@ -26,7 +26,7 @@ export function getBlogsFiltered(tags, text) {
                         ]
             }
         })
-        urlString = `http://localhost:1337/blog-posts?_sort=Created:DESC&${query}`
+        urlString = `https://bigbudbookkeeping-cms.appspot.com/blog-posts?_sort=Created:DESC&${query}`
     }
     else if (tags.length > 0) {
         const query = stringify({ 
@@ -39,7 +39,7 @@ export function getBlogsFiltered(tags, text) {
                     ]
             }
         })
-        urlString = `http://localhost:1337/blog-posts?_sort=Created:DESC&${query}`
+        urlString = `https://bigbudbookkeeping-cms.appspot.com/blog-posts?_sort=Created:DESC&${query}`
     }
     else if (text !== "") {
         const query = stringify({ 
@@ -47,10 +47,10 @@ export function getBlogsFiltered(tags, text) {
                 Content_contains: text
             }
         })
-        urlString = `http://localhost:1337/blog-posts?_sort=Created:DESC&${query}`
+        urlString = `https://bigbudbookkeeping-cms.appspot.com/blog-posts?_sort=Created:DESC&${query}`
     }
     else {
-        urlString = `http://localhost:1337/blog-posts?_sort=Created:DESC`
+        urlString = `https://bigbudbookkeeping-cms.appspot.com/blog-posts?_sort=Created:DESC`
     }
     return axios.get(urlString);
 }
@@ -62,9 +62,9 @@ export function getSimilarBlogs(tag, title) {
             { Title_ne: title }
         ]
     })
-    return axios.get(`http://localhost:1337/blog-posts?_sort=Created:DESC&${query}`);
+    return axios.get(`https://bigbudbookkeeping-cms.appspot.com/blog-posts?_sort=Created:DESC&${query}`);
 }
 
 export function getHighlightedBlogs() {
-    return axios.get(`http://localhost:1337/blog-posts?Highlight=true`);
+    return axios.get(`https://bigbudbookkeeping-cms.appspot.com/blog-posts?Highlight=true`);
   }
