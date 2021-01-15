@@ -1,14 +1,13 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { Button, Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Collapse, Grid, IconButton, makeStyles, withStyles } from "@material-ui/core";
+import { Button, Card, CardActions, CardContent, CardHeader, CardMedia, Grid, makeStyles, withStyles } from "@material-ui/core";
 import fonts from '../../styles/fonts';
 import colors from '../../styles/colors';
 import { Link } from 'react-router-dom';
-import BlogTag from './BlogTag';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     card: {
-        maxWidth: 420,
+        width: 300,
         height: 500,
         marginBottom: 50
     },
@@ -36,13 +35,13 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const ColorButton = withStyles((theme) => ({
+const ColorButton = withStyles(() => ({
     root: {
         color: colors.softPurple,
     }
   }))(Button);
 
-export default function BlogCardSmall({title, subheader, content, image, id, tag1, tag2, tag3}) {
+export default function BlogCardSmall({title, subheader, content, image, id}) {
     const classes = useStyles();
     
     return (
@@ -50,10 +49,8 @@ export default function BlogCardSmall({title, subheader, content, image, id, tag
             <CardHeader 
                 title={title}
                 subheader={
-                    <Grid container direction="column">
-                        <Grid>
-                            {subheader}
-                        </Grid>
+                    <Grid>
+                        {subheader}
                     </Grid>
                 }
                 classes={{

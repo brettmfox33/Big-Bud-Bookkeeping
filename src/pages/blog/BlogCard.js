@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { Button, Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Collapse, Grid, IconButton, makeStyles, withStyles } from "@material-ui/core";
+import { Button, Card, CardActions, CardContent, CardHeader, CardMedia, Grid, makeStyles, withStyles } from "@material-ui/core";
 import fonts from '../../styles/fonts';
 import colors from '../../styles/colors';
 import { Link } from 'react-router-dom';
@@ -11,11 +11,6 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: 500,
         minWidth: 500,
         height: 500,
-        marginBottom: 50
-    },
-    cardSmall: {
-        maxWidth: 300,
-        height: 300,
         marginBottom: 50
     },
     cardMedia: {

@@ -150,29 +150,24 @@ export default function BlogPost() {
                     {/* RELATED POSTS */}
                     {
                         similarBlogPosts.length > 0 && 
-                            <Grid container direction="row"  justify="center">
-                                <Grid container direction="column" alignItems="center">
-                                    <Grid className={classes.relatedPostsHeader}>
-                                        Related Posts
-                                    </Grid>
-                                    <Grid className={classes.divider}>
+                            <Grid container direction="column" alignItems="center">
+                                <Grid className={classes.relatedPostsHeader}>
+                                    Related Posts
+                                </Grid>
+                                <Grid className={classes.divider}>
                                     <Divider />
-                                    </Grid>
-                                    <Grid container xs={10} direction={largeScreen ? "row" : "column"} justify="space-evenly">
-                                        {similarBlogPosts.slice(0,3).map(post => (
-                                            <BlogCardSmall
-                                                key={post.id}
-                                                title={post.Title}
-                                                subheader={post.Created}
-                                                content={post.Content}
-                                                image={getImage(post.Image)}
-                                                id={post.id}
-                                                tag1={post.Tag1}
-                                                tag2={post.Tag2}
-                                                tag3={post.Tag3}
-                                            />
-                                        ))}
-                                    </Grid>
+                                </Grid>
+                                <Grid container item xs={10} direction={largeScreen ? "row" : "column"} justify="space-evenly">
+                                    {similarBlogPosts.slice(0,3).map(post => (
+                                        <BlogCardSmall
+                                            key={post.id}
+                                            title={post.Title}
+                                            subheader={post.Created}
+                                            content={post.Content}
+                                            image={getImage(post.Image)}
+                                            id={post.id}
+                                        />
+                                    ))}
                                 </Grid>
                             </Grid>
                     }

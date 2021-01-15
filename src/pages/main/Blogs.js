@@ -90,9 +90,6 @@ export default function Blogs() {
                                 image={getImage(post.Image)}
                                 subheader={post.Created}
                                 id={post.id}
-                                tag1={post.Tag1}
-                                tag2={post.Tag2}
-                                tag3={post.Tag3}
                             />
                         </Grid>
                     )
