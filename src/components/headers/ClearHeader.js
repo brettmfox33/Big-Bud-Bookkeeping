@@ -47,7 +47,7 @@ const useStyles = makeStyles({
         justifyContent: "space-between",
         position: 'sticky',
         top: 42,
-        zIndex: 9999
+        zIndex: 3
     },
     headerLinks: {
         marginRight: 100,
@@ -96,7 +96,7 @@ const useStyles = makeStyles({
         position: 'sticky',
         top: 42,
         borderBottom: `1px solid ${colors.mainPurple}`,
-        zIndex: 9999
+        zIndex: 3
     },
     servicesButton: {
         marginLeft: 25,

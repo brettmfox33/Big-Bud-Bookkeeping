@@ -71,10 +71,13 @@ const useStyles = makeStyles({
 
 export default function WebFooterInfo({ebookURL}) {
     const classes = useStyles();
+    const dispatch = useDispatch()
+
+    const emailSignupStatus = useSelector(state => state.emailSignupStatus)
+
     const [validEmail, setValidEmail] = useState(false);
     const [textInput, setTextInput] = useState("");
-    const dispatch = useDispatch()
-    const emailSignupStatus = useSelector(state => state.emailSignupStatus)
+
     
     useEffect(() => {
         if (emailSignupStatus === 'success') {
@@ -119,7 +122,7 @@ export default function WebFooterInfo({ebookURL}) {
                 <Grid>Sign up for our Tuesday Top Tips email newsletter!</Grid>
                 <Grid className={classes.inputContainer}>
                     <CustomTextField placeholder="Email" value={textInput} onChange={e => handleChange(e)} className={classes.input} label="" variant="filled" />
-                    <Button disabled={!validEmail} className={classes.signUpButton} onClick={clickHandler}>Sign Up</Button>
+                    <Button disabled={!validEmail} className={classes.signUpButton} onClick={clickHandler}>Subscribe</Button>
                 </Grid>
             </Grid>
         </Grid>

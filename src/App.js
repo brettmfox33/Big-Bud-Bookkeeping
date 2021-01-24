@@ -13,6 +13,7 @@ import PrivacyMain from './pages/privacy/PrivacyMain';
 import BlogMain from './pages/blog/BlogMain';
 import BlogPost from './pages/blog/BlogPost';
 import SnackBar from './components/SnackBar';
+import NewsletterModal from './components/NewsletterModal';
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
                 </Switch>
                 <Footer />
                 <SnackBar />
+                <NewsletterModal />
             </Grid>
         </Router>
      );

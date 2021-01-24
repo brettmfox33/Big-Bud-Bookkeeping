@@ -26,11 +26,11 @@ export default function SnackBar() {
     useEffect(() => {
         if (emailSignupStatus === 'success') {
             setOpenSnackbar(true)
-            setSnackbarMessage("Email Added Successfully!")
+            setSnackbarMessage("Email Successfully Subscribed!")
         }
         else if (emailSignupStatus === 'failure') {
             setOpenSnackbar(true)
-            setSnackbarMessage("Failed to add email :(")
+            setSnackbarMessage("Failed To Subscribe Email.")
         }
         else {
             setOpenSnackbar(false)

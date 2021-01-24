@@ -55,7 +55,7 @@ const useStyles = makeStyles({
         position: 'sticky',
         top: 42,
         borderBottom: `1px solid ${colors.mainPurple}`,
-        zIndex: 9999
+        zIndex: 3
     },
     headerLinks: {
         marginRight: 100,

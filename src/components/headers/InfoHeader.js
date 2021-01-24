@@ -27,7 +27,7 @@ const useStyles = makeStyles({
       paddingRight: 100,
       position: 'sticky',
       top: 0,
-      zIndex: 9999
+      zIndex: 3
     },
     contactInfo: {
         display: "flex"
