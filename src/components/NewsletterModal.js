@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { Button, Dialog, DialogContent, DialogTitle, Grid, IconButton, InputBase, makeStyles, withStyles } from '@material-ui/core';
+import { Button, Dialog, DialogContent, DialogTitle, Grid, IconButton, InputBase, makeStyles, useMediaQuery, withStyles } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
@@ -23,6 +23,20 @@ const CustomTextField = withStyles({
         width: 220
     }
   })(InputBase);
+
+  const MobileCustomTextField = withStyles({
+    root: {
+        width: "100%"
+    },
+    input: {
+        border: '1px solid #cccccc',
+        padding: '10px 12px',
+        borderRadius: "2px 0px 0px 2px",
+        marginBottom: 10,
+        width: 175
+    }
+  })(InputBase);
+
 
   const CustomDialogTitle = withStyles((theme) => ({
     root: {
@@ -61,7 +75,8 @@ const CustomTextField = withStyles({
     header: {
         fontFamily: fonts.titleFont,
         fontSize: 35,
-        marginBottom: 10
+        marginBottom: 10,
+        textAlign: "center"
     },
     image: {
         maxWidth: 100
@@ -82,6 +97,8 @@ const CustomTextField = withStyles({
 export default function NewsletterModal() {
     const classes = useStyles();
     const dispatch = useDispatch()
+    const largeScreen = useMediaQuery('(min-width:1000px)', {defaultMatches: true});
+
 
     const emailSignupStatus = useSelector(state => state.emailSignupStatus)
 
@@ -151,11 +168,22 @@ export default function NewsletterModal() {
                     </Grid>
                     <Grid container direction="row" justify="center">
                         <Grid>
-                            <CustomTextField 
-                                placeholder="Email"
-                                value={textInput} 
-                                onChange={e => handleChange(e)} 
-                            />
+                            {
+                                largeScreen
+                                    ? 
+                                        <CustomTextField 
+                                            placeholder="Email"
+                                            value={textInput} 
+                                            onChange={e => handleChange(e)} 
+                                        />
+                                    : 
+                                        <MobileCustomTextField 
+                                            placeholder="Email"
+                                            value={textInput} 
+                                            onChange={e => handleChange(e)} 
+                                        />
+                            }
+                            
                         </Grid>
                         <Grid>
                             <Button 

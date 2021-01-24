@@ -4,7 +4,7 @@ import { Grid, Divider, Button, withStyles, InputBase } from '@material-ui/core'
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import fonts from "../../styles/fonts";
 import colors from "../../styles/colors";
-import '@firebase/storage';
+// import '@firebase/storage';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionCreators } from '../../redux/actionCreators';
@@ -113,10 +113,13 @@ export default function WebFooterInfo({ebookURL}) {
             setValidEmail(false)
         }
     }
+    
     return(
         <Grid container item direction="row" justify="space-around">
         <Grid container item direction="row" alignItems="center" justify="space-evenly" xs={10} sm={4} wrap="nowrap" className={classes.newsletterInfo}>
-        <Grid item className={classes.newsletterQuestion}>Want to stay in the loop?</Grid>
+            <Grid item className={classes.newsletterQuestion}>
+                Want to stay in the loop?
+            </Grid>
             <Divider orientation="vertical" className={classes.divider}></Divider>
             <Grid item container direction="column" className={classes.newsletterText}>
                 <Grid>Sign up for our Tuesday Top Tips email newsletter!</Grid>
