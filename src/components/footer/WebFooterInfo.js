@@ -43,8 +43,8 @@ const useStyles = makeStyles({
     signUpButton: {
         backgroundColor: colors.softPurple,
         color: 'white',
+        fontSize: 12,
         height: 40,
-        marginTop: 1,
         marginLeft: 10,
         borderRadius: 4,
         '&:hover': {
@@ -65,7 +65,7 @@ const useStyles = makeStyles({
     input: {
         borderRadius: 4,
         backgroundColor: 'white',
-        padding: '10px 12px',
+        padding: '10px 12px'
     }
   })(InputBase);
 
@@ -113,29 +113,29 @@ export default function WebFooterInfo({ebookURL}) {
             setValidEmail(false)
         }
     }
-    
+
     return(
         <Grid container item direction="row" justify="space-around">
-        <Grid container item direction="row" alignItems="center" justify="space-evenly" xs={10} sm={4} wrap="nowrap" className={classes.newsletterInfo}>
-            <Grid item className={classes.newsletterQuestion}>
-                Want to stay in the loop?
+            <Grid container item direction="row" alignItems="center" justify="space-evenly" xs={10} sm={4} wrap="nowrap" className={classes.newsletterInfo}>
+                <Grid item className={classes.newsletterQuestion}>
+                    Want to stay in the loop?
+                </Grid>
+                <Divider orientation="vertical" className={classes.divider}></Divider>
+                <Grid item container direction="column" className={classes.newsletterText}>
+                    <Grid>Sign up for our Tuesday Top Tips email newsletter!</Grid>
+                    <Grid className={classes.inputContainer}>
+                        <CustomTextField placeholder="Email" value={textInput} onChange={e => handleChange(e)} className={classes.input} label="" variant="filled" />
+                        <Button disabled={!validEmail} className={classes.signUpButton} onClick={clickHandler}>Subscribe</Button>
+                    </Grid>
+                </Grid>
             </Grid>
-            <Divider orientation="vertical" className={classes.divider}></Divider>
-            <Grid item container direction="column" className={classes.newsletterText}>
-                <Grid>Sign up for our Tuesday Top Tips email newsletter!</Grid>
-                <Grid className={classes.inputContainer}>
-                    <CustomTextField placeholder="Email" value={textInput} onChange={e => handleChange(e)} className={classes.input} label="" variant="filled" />
-                    <Button disabled={!validEmail} className={classes.signUpButton} onClick={clickHandler}>Subscribe</Button>
+            <Grid container item direction="row" alignItems="center" justify="space-evenly" xs={10} sm={4} wrap="nowrap"  className={classes.whoInfo}>
+                <Grid item className={classes.whoQuestion}>Who do we help?</Grid>
+                <Divider orientation="vertical" className={classes.divider}></Divider>
+                <Grid item className={classes.whoText}>
+                    Our primary focus is the Oklahoma cannabis industry but we assist clients in multiple industries all across the US.
                 </Grid>
             </Grid>
         </Grid>
-        <Grid container item direction="row" alignItems="center" justify="space-evenly" xs={10} sm={4} wrap="nowrap"  className={classes.whoInfo}>
-            <Grid item className={classes.whoQuestion}>Who do we help?</Grid>
-            <Divider orientation="vertical" className={classes.divider}></Divider>
-            <Grid item className={classes.whoText}>
-                Our primary focus is the Oklahoma cannabis industry but we assist clients in multiple industries all across the US.
-            </Grid>
-        </Grid>
-    </Grid>
     )
 }
