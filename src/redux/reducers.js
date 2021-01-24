@@ -5,7 +5,8 @@ const initialState = {
     blogPosts: [],
     blogPost: null,
     similarBlogPosts: [],
-    highlightedBlogPosts: []
+    highlightedBlogPosts: [],
+    emailSignupStatus: null
 }
 
 export default handleActions(
@@ -45,6 +46,18 @@ export default handleActions(
             ...state,
             highlightedBlogPosts: action.payload.data 
         }),
+        [actionCreators.postNewsletterEmail]: state => ({
+            ...state,
+            emailSignupStatus: null
+        }),
+        [actionCreators.postNewsletterEmailSuccess]: state => ({
+            ...state,
+            emailSignupStatus: 'success'
+        }),
+        [actionCreators.postNewsletterEmailFailure]: state => ({
+            ...state,
+            emailSignupStatus: 'failure'
+        })
     },
     initialState
   );
