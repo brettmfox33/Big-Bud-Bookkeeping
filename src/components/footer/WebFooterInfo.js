@@ -122,7 +122,7 @@ export default function WebFooterInfo({ebookURL}) {
                 </Grid>
                 <Divider orientation="vertical" className={classes.divider}></Divider>
                 <Grid item container direction="column" className={classes.newsletterText}>
-                    <Grid>Sign up for our Tuesday Top Tips email newsletter!</Grid>
+                    <Grid>Sign up for our newsletter to stay informed on the latest cannabis business news and tips.</Grid>
                     <Grid className={classes.inputContainer}>
                         <CustomTextField placeholder="Email" value={textInput} onChange={e => handleChange(e)} className={classes.input} label="" variant="filled" />
                         <Button disabled={!validEmail} className={classes.signUpButton} onClick={clickHandler}>Subscribe</Button>
