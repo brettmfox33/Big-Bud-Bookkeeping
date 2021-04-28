@@ -122,7 +122,7 @@ export default function WebFooterInfo({ebookURL}) {
                 </Grid>
                 <Divider orientation="vertical" className={classes.divider}></Divider>
                 <Grid item container direction="column" className={classes.newsletterText}>
-                    <Grid>Sign up for our newsletter to stay informed on the latest cannabis business news and tips.</Grid>
+                    <Grid>Sign up for our newsletter to stay informed on the latest business news and tips.</Grid>
                     <Grid className={classes.inputContainer}>
                         <CustomTextField placeholder="Email" value={textInput} onChange={e => handleChange(e)} className={classes.input} label="" variant="filled" />
                         <Button disabled={!validEmail} className={classes.signUpButton} onClick={clickHandler}>Subscribe</Button>
@@ -133,7 +133,8 @@ export default function WebFooterInfo({ebookURL}) {
                 <Grid item className={classes.whoQuestion}>Who do we help?</Grid>
                 <Divider orientation="vertical" className={classes.divider}></Divider>
                 <Grid item className={classes.whoText}>
-                    Our primary focus is the Oklahoma cannabis industry but we assist clients in multiple industries all across the US.
+                    Our primary focus is small to medium sized retail and service businesses, but 
+                    we assist clients in multiple industries all acros the US.
                 </Grid>
             </Grid>
         </Grid>

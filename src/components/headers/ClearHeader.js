@@ -24,7 +24,7 @@ const AppointmentButtonWhite = withStyles({
         fontFamily: fonts.textFont,
         borderRadius: 50,
         height: 50,
-        width: 215,
+        width: 230,
         padding: 0,
         fontSize: 15,
         borderColor: colors.mainPurple,

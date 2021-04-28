@@ -127,14 +127,14 @@ export default function AboutContent() {
                     </Grid>
                     <Grid item xs={12} sm={5} container direction="column" className={largeScreen ? classes.motivationText : classes.mobileMotivationText}>
                         <Grid className={classes.motivationTextTop}>
-                        When we speak with business owners in the cannabis industry they all ask similar questions…Where did all the money go?  
+                        When we speak with business owners in any industry they ask similar questions…Where did all the money go?  
                         How can they possibly stay on top of the mountain of paperwork?  
                         How can they be sure they are staying in compliance with an entity that doesn’t state the rules clearly?  
                         It’s all about internal processes and understanding the rules of the industry.
 
                         </Grid>
                         <Grid className={classes.motivationBottomText}>
-                            Many dispensary owners are too busy running the day-to-day business and live in fear of the paperwork mountain turning into a landslide.                         </Grid>
+                            Many business owners are too busy running the day-to-day business and live in fear of the paperwork mountain turning into a landslide.                         </Grid>
                     </Grid>
                     <Grid item xs sm={2}></Grid>
                 </Grid>
@@ -152,7 +152,7 @@ export default function AboutContent() {
                             My team and I have helped other business owners to climb that mountain, totally transforming our lives and businesses along the way.   
                         </Grid>
                         <Grid className={classes.whyBottomText}>
-                            Now we are on a mission to help small businesses in the cannabis industry escape from the shadow of the mountain so they 
+                            Now we are on a mission to help small businesses escape from the shadow of the mountain so they 
                             can climb to the top and take in the view of success. 
                         </Grid>
                     </Grid>

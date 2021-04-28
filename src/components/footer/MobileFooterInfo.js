@@ -97,7 +97,7 @@ export default function MobileFooterInfo() {
                 </Grid>
                 <Divider className={classes.divider}></Divider>
                 <Grid>
-                    Sign up for our Tuesday Top Tips email newsletter!
+                    Sign up for our newsletter to stay informed on the latest business news and tips.
                 </Grid>
                 <Grid direction="column" className={classes.inputContainer}>
                     <Grid>
@@ -114,7 +114,8 @@ export default function MobileFooterInfo() {
                 </Grid>
                 <Divider className={classes.divider}></Divider>
                 <Grid item className={classes.rightText}>
-                    Our primary focus is the Oklahoma cannabis industry but we assist clients in multiple industries all across the US.
+                    Our primary focus is small to medium sized retail and service businesses, but 
+                    we assist clients in multiple industries all acros the US.
                 </Grid>
             </Grid>
         </Grid>

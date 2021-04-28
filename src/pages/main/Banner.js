@@ -12,7 +12,7 @@ const AppointmentButton = withStyles({
         fontFamily: fonts.textFont,
         borderRadius: 50,
         height: 50,
-        width: 215,
+        width: 230,
         padding: 0,
         fontSize: 15,
         borderColor: colors.mainPurple,
@@ -82,9 +82,9 @@ export default function Banner() {
                     Specialized Bookkeeping
                 </Grid>
                 <Grid className={classes.bannerText}>
-                    We help cannabis business owners implement robust daily operating 
-                    processes and controls around cash, inventory and compliance 
-                    to ensure business is hitting profit benchmarks. 
+                    We help small business owners implement robust daily operating processes
+                    and controls around cash and inventory to ensure their business is hitting
+                    profit benchmarks.
                 </Grid>
                 {
                     largeScreen ? 

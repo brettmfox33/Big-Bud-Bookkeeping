@@ -53,8 +53,7 @@ export default function Services() {
                     <Grid item xs={10} sm={3} className={classes.service}>
                         <Service 
                             title="Bookkeeping"
-                            text="We offer a range of bookkeeping services depending on client needs. 
-                            Read more about how we help businesses of all sizes take control of their finances."
+                            text="We offer a range of bookkeeping services depending on client needs."
                             icon={<FontAwesomeIcon icon={faFileSpreadsheet} />}
                         />
                     </Grid>
@@ -68,8 +67,7 @@ export default function Services() {
                     <Grid item xs={10} sm={3} className={classes.service}>
                         <Service 
                             title="Budgeting"
-                            text="Cash flow management is not just tracking money as it goes in and out.  
-                            Learn more about how we help businesses plan their financial futures."
+                            text="Cash flow management is not just tracking money as it goes in and out."
                             icon={<FontAwesomeIcon icon={faHandHoldingUsd} />}
                         />
                     </Grid>

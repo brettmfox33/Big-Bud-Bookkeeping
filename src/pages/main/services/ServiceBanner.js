@@ -52,7 +52,7 @@ export default function ServiceBanner() {
     return (
         <Grid container direction="column" justify="center" alignItems="center" className={largeScreen ? classes.bannerContainer : classes.mobileBannerContainer}>
             <Grid item sm={4} className={classes.text}>
-                Bring your business back into focus with our step by step process.
+                Bring your business into focus with our step by step process.
             </Grid>
             {/* <Grid item>
                 <Link to="/services" className={classes.button}>
